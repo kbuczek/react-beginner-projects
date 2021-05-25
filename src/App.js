@@ -1,12 +1,25 @@
-import Button from "react-bootstrap/Button";
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import BirthdayList from "./Projects/birthday-list";
+import Home from "./Home";
+import Error from "./Error";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Button variant="primary">HELLO</Button>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/birthday-list">
+            <BirthdayList />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
