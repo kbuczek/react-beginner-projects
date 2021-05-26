@@ -1,37 +1,41 @@
 export default [
   {
-    id: 1,
-    name: 'Bertie Yates',
-    age: 29,
-    image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg',
-  },
-  {
     id: 2,
-    name: 'Hester Hogan',
-    age: 32,
+    name: "Aragorn II Elessar Telcontar",
+    age: 87,
+    date: "February 29",
     image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-3_rxtqvi.jpg',
+      "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Aragorn300ppx.png/170px-Aragorn300ppx.png",
   },
   {
     id: 3,
-    name: 'Larry Little',
+    name: "Django Freeman",
     age: 36,
+    date: "July 13",
     image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
+      "https://pbs.twimg.com/profile_images/1343818057425313793/6G8U2Doj_400x400.jpg",
   },
   {
     id: 4,
-    name: 'Sean Walsh',
-    age: 34,
+    name: "Master Chief",
+    age: 45,
+    date: "October 3",
     image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
+      "https://i2.wp.com/static.trueachievements.com/customimages/058356.jpg",
   },
   {
     id: 5,
-    name: 'Lola Gardner',
-    age: 29,
+    name: "Enzo Gorlami",
+    age: 35,
+    date: "December 31",
     image:
-      'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
+      "http://polisharmy.pl/uploads/monthly_2018_05/a4a2787b3ed6ef86e6ba3b726bf175d2dcb548ee_full.jpg.7cc60a5d3afc22cb8d052764bc27803e.jpg",
+  },
+  {
+    id: 1,
+    name: "Kratos",
+    age: 451,
+    date: "March 10",
+    image: "https://avatarfiles.alphacoders.com/132/thumb-1920-132539.jpg",
   },
 ];
