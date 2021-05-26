@@ -143,6 +143,7 @@ const AddPersonModal = (props) => {
             />
             <Form.Label>Name</Form.Label>
             <Form.Control
+              required
               type="text"
               placeholder="Enter person's name"
               name="name"
@@ -151,6 +152,7 @@ const AddPersonModal = (props) => {
             />
             <Form.Label>Age</Form.Label>
             <Form.Control
+              required
               type="text"
               placeholder="Enter person's age"
               name="age"
@@ -159,6 +161,7 @@ const AddPersonModal = (props) => {
             />
             <Form.Label>Birthday Date</Form.Label>
             <Form.Control
+              required
               type="text"
               placeholder="Enter month name and number of the day"
               name="date"
