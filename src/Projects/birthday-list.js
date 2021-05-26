@@ -12,7 +12,6 @@ import {
 } from "react-bootstrap";
 
 const BirthdayList = () => {
-  // const [person, setPerson] = useState({ name: "", age: "", image: "" });
   const [people, setPeople] = useState(data);
   const [modalShow, setModalShow] = React.useState(false);
 
@@ -21,7 +20,9 @@ const BirthdayList = () => {
     setPeople(newPeople);
   };
 
-  const addPerson = (img, name, age, birthday) => {};
+  const addPerson = (person) => {
+    setPeople([...people, person]);
+  };
 
   return (
     <>
@@ -51,7 +52,11 @@ const BirthdayList = () => {
         </Button>
       </Container>
 
-      <AddPersonModal show={modalShow} onHide={() => setModalShow(false)} />
+      <AddPersonModal
+        show={modalShow}
+        addPerson={addPerson}
+        onHide={() => setModalShow(false)}
+      />
     </>
   );
 };
@@ -90,6 +95,29 @@ const List = ({ people, removePerson }) => {
 };
 
 const AddPersonModal = (props) => {
+  const [person, setPerson] = useState({
+    name: "",
+    age: "",
+    date: "",
+    image: "",
+  });
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setPerson({ ...person, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    // e.preventDefault(); TYPE="SUBMIT" POWODUJE BŁĘDY
+    if (person.name && person.age && person.date) {
+      const newPerson = { ...person, id: new Date().getTime().toString() };
+      props.addPerson(newPerson);
+      setPerson({ name: "", age: "", date: "", image: "" });
+      console.log(newPerson);
+    }
+  };
+
   return (
     <Modal
       {...props}
@@ -106,15 +134,48 @@ const AddPersonModal = (props) => {
         <Form>
           <Form.Group>
             <Form.Label>Image</Form.Label>
-            <Form.Control type="text" placeholder="Enter image source link" />
+            <Form.Control
+              type="text"
+              placeholder="Enter image source link"
+              name="image"
+              value={person.image}
+              onChange={handleChange}
+            />
             <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter person name" />
+            <Form.Control
+              type="text"
+              placeholder="Enter person's name"
+              name="name"
+              value={person.name}
+              onChange={handleChange}
+            />
             <Form.Label>Age</Form.Label>
-            <Form.Control type="text" placeholder="Enter person age" />
-            <Form.Label>Age</Form.Label>
-            <Form.Control type="text" placeholder="Enter person age" />
+            <Form.Control
+              type="text"
+              placeholder="Enter person's age"
+              name="age"
+              value={person.age}
+              onChange={handleChange}
+            />
+            <Form.Label>Birthday Date</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter month name and number of the day"
+              name="date"
+              value={person.date}
+              onChange={handleChange}
+            />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button
+            variant="primary"
+            className="btn-submit"
+            // type="submit" TYPE SUBMIT POWODUJE BŁĘDY
+            onClick={() => {
+              console.log(person);
+              handleSubmit();
+              props.onHide();
+            }}
+          >
             Submit
           </Button>
         </Form>

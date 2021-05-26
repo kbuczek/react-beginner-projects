@@ -24,3 +24,12 @@
   margin-bottom: 0;
   color: rgb(167, 167, 167);
 }
+
+label {
+  margin-top: 1rem;
+}
+
+.btn-submit {
+  margin-top: 2rem;
+  margin-left: 45%;
+}
