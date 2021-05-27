@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BirthdayList from "./Projects/BirthdayList";
-import Navbar from "./Projects/Navbar";
+import MyNavbar from "./Projects/MyNavbar";
 import Home from "./Home";
 import Error from "./Error";
 
@@ -16,8 +16,8 @@ function App() {
           <Route path="/birthday-list">
             <BirthdayList />
           </Route>
-          <Route path="/navbar">
-            <Navbar />
+          <Route path="/my-navbar">
+            <MyNavbar />
           </Route>
           <Route path="*">
             <Error />

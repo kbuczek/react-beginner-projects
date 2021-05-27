@@ -15,10 +15,13 @@
 
 .content {
   height: 2000px;
+  background-color: #eff4f8;
 }
 
-.nav {
-  border-radius: 0.2rem;
+.navbar {
+  border-bottom-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  padding: 0.2rem;
 }
 
 .center {
