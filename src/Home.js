@@ -10,6 +10,9 @@ const Home = () => {
           <li>
             <Link to="/birthday-list">Birthday List</Link>
           </li>
+          <li>
+            <Link to="/navbar">Navbar</Link>
+          </li>
         </ul>
       </nav>
     </>

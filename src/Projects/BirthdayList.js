@@ -1,4 +1,4 @@
-import "./birthday-list.css";
+import "./BirthdayList.css";
 import React, { useState } from "react";
 import data from "../data";
 import {

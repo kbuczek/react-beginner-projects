@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import BirthdayList from "./Projects/birthday-list";
+import BirthdayList from "./Projects/BirthdayList";
+import Navbar from "./Projects/Navbar";
 import Home from "./Home";
 import Error from "./Error";
 
@@ -14,6 +15,9 @@ function App() {
           </Route>
           <Route path="/birthday-list">
             <BirthdayList />
+          </Route>
+          <Route path="/navbar">
+            <Navbar />
           </Route>
           <Route path="*">
             <Error />
