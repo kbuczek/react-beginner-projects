@@ -1,14 +1,31 @@
-import React, { FaBars } from "react";
-import { Nav, NavDropdown, Container } from "react-bootstrap";
+import React from "react";
+import { Nav, NavDropdown, Image, Row, Container, Col } from "react-bootstrap";
 import "./Navbar.css";
+import MyLogo from "../Images/houses.jpg";
 
 const Navbar = () => {
   return (
     <>
-      <div className="jumbotron" style={{ marginBottom: "0px" }}>
-        Nazwa zarządcy nieruchomości
+      <div className="jumbotron">
+        <Container>
+          <Row>
+            <Col sm={4}>
+              <Image
+                src="http://www.realestatelogodesign.com/real-estate-logos-1/three-houses-logo.jpg"
+                alt="logo"
+              />
+              {/* <Image src={require(MyLogo)} alt="logo" /> */}
+            </Col>
+            <Col sm={8} className="center" id="nazwa">
+              <div>
+                Zarządca nieruchomości ".NET" Ulica Przygodna 4/78a , Kraków
+                30-835
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
-      {/* <Container> */}
+
       <div className="sticky-top">
         <Nav
           variant="pills"
@@ -44,12 +61,13 @@ const Navbar = () => {
           <Nav.Item>
             <Nav.Link eventKey="option3">Option 3</Nav.Link>
           </Nav.Item>
+          <Nav.Item className="justify-content-end">
+            <Nav.Link eventKey="logout">Log out</Nav.Link>
+          </Nav.Item>
         </Nav>
       </div>
-      {/* </Container> */}
-      <div className="peepee" style={{ marginBottom: "0px" }}>
-        Content
-      </div>
+
+      <div className="content">Content</div>
     </>
   );
 };
