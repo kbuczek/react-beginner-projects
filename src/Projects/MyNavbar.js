@@ -82,8 +82,7 @@ const MyNavbar = () => {
           expand="lg"
           bg="dark"
           variant="dark"
-          className="navbar"
-          sticky="top"
+          className="navbar sticky-top fixed-top"
         >
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
