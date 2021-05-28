@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Nav,
   NavDropdown,
@@ -10,7 +11,7 @@ import {
   Navbar,
 } from "react-bootstrap";
 import "./MyNavbar.css";
-import MyLogo from "../Images/houses.jpg";
+import MyLogo from "../../Images/houses.jpg";
 
 const MyNavbar = () => {
   return (
@@ -27,54 +28,13 @@ const MyNavbar = () => {
             </Col>
             <Col sm={8} className="center" id="nazwa">
               <div>
-                Zarządca nieruchomości ".NET" Ulica Przygodna 4/78a , Kraków
-                30-835
+                Very long company name and some crucial information about your
+                company.
               </div>
             </Col>
           </Row>
         </Container>
       </div>
-
-      {/* <Container>
-          <Nav
-            variant="pills"
-            className="navbar-expand-md navbar-dark bg-dark"
-            defaultActiveKey="home"
-          >
-            <Nav.Item>
-              <Nav.Link eventKey="home">Home</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="option1">Option 1</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="option2">Option 2</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="dropdown">
-                <NavDropdown title="Dropdown" id="nav-dropdown">
-                  <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
-                  <NavDropdown.Item eventKey="4.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item eventKey="4.3">
-                    Something else here
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item eventKey="4.4">
-                    Separated link
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="option3">Option 3</Nav.Link>
-            </Nav.Item>
-            <Nav.Item className="justify-content-end">
-              <Nav.Link eventKey="logout">Log out</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Container> */}
 
       <Container>
         <Navbar
@@ -88,13 +48,19 @@ const MyNavbar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav variant="pills" defaultActiveKey="home">
               <Nav.Item>
-                <Nav.Link eventKey="home">Home</Nav.Link>
+                <Link to="/my-navbar/" className="nav-link">
+                  Home
+                </Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="option1">Option 1</Nav.Link>
+                <Link to="/my-navbar/option1" className="nav-link">
+                  Option 1
+                </Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="option2">Option 2</Nav.Link>
+                <Nav.Link eventKey="option2">
+                  <Link to="/my-navbar/option2">Option 2</Link>
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="dropdown">
@@ -123,7 +89,7 @@ const MyNavbar = () => {
           </Navbar.Collapse>
         </Navbar>
 
-        <div className="content">Content</div>
+        {/* <div className="content">Content</div> */}
       </Container>
     </>
   );
