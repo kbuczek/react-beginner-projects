@@ -11,12 +11,6 @@ const Home = () => {
             <Link to="/birthday-list">Birthday List</Link>
           </li>
           <li>
-            <Link to="/my-navbar">Navbar with React Bootstrap</Link>
-          </li>
-          <li>
-            <Link to="/login">Login form</Link>
-          </li>
-          <li>
             <Link to="/accordion">Accordion</Link>
           </li>
         </ul>
