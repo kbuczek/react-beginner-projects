@@ -13,6 +13,9 @@ const Home = () => {
           <li>
             <Link to="/accordion">Accordion</Link>
           </li>
+          <li>
+            <Link to="/navbar">Navbar</Link>
+          </li>
         </ul>
       </nav>
     </>
