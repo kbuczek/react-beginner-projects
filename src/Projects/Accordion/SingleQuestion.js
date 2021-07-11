@@ -1,5 +1,6 @@
 import react, { useState } from "react";
 import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs";
+import "./SingleQuestion.css";
 
 const SingleQuestion = ({ title, info }) => {
   const [showInfo, setShowInfo] = useState(false);
