@@ -63,9 +63,9 @@
   transform: rotate(90deg);
 }
 
-/* ul {
+ul {
   list-style-type: none;
-} */
+}
 
 .links a {
   color: hsl(209, 34%, 30%);
@@ -79,7 +79,8 @@
 
 .links a:hover {
   background: var(--clr-primary-8);
-  color: var(--clr-primary-5);
+  color: white;
+  text-decoration: none;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
 }
@@ -91,5 +92,49 @@
 }
 
 .show-container {
-  height: 10rem;
+  height: 10.9rem;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .links-container {
+    /* must be auto, so the inline css in Navbar.js works */
+    height: auto !important;
+  }
+  .links {
+    display: flex;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+  .social-icons {
+    display: flex;
+    /* height: 0.6rem; */
+  }
+  .social-icons a {
+    margin: 0 0.5rem;
+    color: var(--clr-primary-5);
+    transition: var(--transition);
+  }
+  .social-icons a:hover {
+    color: var(--clr-primary-7);
+  }
 }
