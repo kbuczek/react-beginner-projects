@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/birthday-list">
+          <Route exact path="/birthday-list-bootstrap">
             <BirthdayList />
           </Route>
           <Route exact path="/accordion">

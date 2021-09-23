@@ -1,20 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Home.css";
 
 const Home = () => {
   return (
     <>
-      <h1>React beginner projects:</h1>
+      <h1 className="home-title">React beginner projects:</h1>
       <nav>
-        <ul>
+        <ul className="home-container">
           <li>
-            <Link to="/birthday-list">Birthday List</Link>
+            <Link
+              className="home-link home-button"
+              to="/birthday-list-bootstrap"
+            >
+              Birthday List Bootstrap
+            </Link>
           </li>
           <li>
-            <Link to="/accordion">Accordion</Link>
+            <Link className="home-link home-button" to="/accordion">
+              Accordion
+            </Link>
           </li>
           <li>
-            <Link to="/navbar">Navbar</Link>
+            <Link className="home-link home-button" to="/navbar">
+              Navbar
+            </Link>
           </li>
         </ul>
       </nav>
