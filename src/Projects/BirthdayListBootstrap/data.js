@@ -16,14 +16,6 @@ export default [
       "https://pbs.twimg.com/profile_images/1343818057425313793/6G8U2Doj_400x400.jpg",
   },
   {
-    id: 4,
-    name: "Master Chief",
-    age: 45,
-    date: "October 3",
-    image:
-      "https://i2.wp.com/static.trueachievements.com/customimages/058356.jpg",
-  },
-  {
     id: 5,
     name: "Enzo Gorlami",
     age: 35,

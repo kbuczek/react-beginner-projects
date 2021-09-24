@@ -1,8 +1,16 @@
 #b-row {
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(255, 255, 255);
   border-radius: 0.3rem;
+}
+
+.container {
+  margin: 3rem auto;
+  background: #f6f6f6;
+  border-radius: 0.5rem;
+  padding: 2.5rem 2rem;
+  display: grid;
 }
 
 #b-img {

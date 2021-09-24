@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import BirthdayList from "./Projects/BirthdayList/BirthdayList";
+import BirthdayListBootstrap from "./Projects/BirthdayListBootstrap/BirthdayList";
 import Accordion from "./Projects/Accordion/Accordion";
 import Navbar from "./Projects/Navbar/Navbar";
 import Home from "./Home";
@@ -15,7 +15,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/birthday-list-bootstrap">
-            <BirthdayList />
+            <BirthdayListBootstrap />
           </Route>
           <Route exact path="/accordion">
             <Accordion />

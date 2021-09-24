@@ -6,7 +6,7 @@ import "./Accordion.css";
 const Accordion = () => {
   return (
     <main>
-      <div className="container">
+      <div className="acc-container">
         <h4>Frequently asked questions</h4>
         <section>
           {data.map((question) => (

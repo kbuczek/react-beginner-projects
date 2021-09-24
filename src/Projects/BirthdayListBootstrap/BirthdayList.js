@@ -27,7 +27,7 @@ const BirthdayList = () => {
   return (
     <>
       <Container>
-        <h1>Birthdays List </h1>
+        <h1>Birthday List Bootstrap 5</h1>
         <p>number of people: {people.length}</p>
         <Row>
           <Col></Col>

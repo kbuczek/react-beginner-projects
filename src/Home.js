@@ -5,7 +5,7 @@ import "./Home.css";
 const Home = () => {
   return (
     <>
-      <h1 className="home-title">React beginner projects:</h1>
+      <h1 className="home-title">My react beginner projects:</h1>
       <nav>
         <ul className="home-container">
           <li>

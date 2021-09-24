@@ -23,7 +23,7 @@ main {
   align-items: center;
 }
 
-.container {
+.acc-container {
   /* width: 90vw; */
   margin: 4rem;
   background: var(--clr-white);
