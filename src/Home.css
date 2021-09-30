@@ -26,6 +26,13 @@
   font-size: 4rem;
 }
 
+.home-subtitle {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .home-link {
   text-decoration: none;
   color: var(--color-smoke);

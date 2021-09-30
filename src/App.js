@@ -5,6 +5,7 @@ import Accordion from "./Projects/Accordion/Accordion";
 import Navbar from "./Projects/Navbar/Navbar";
 import Home from "./Home";
 import Error from "./Error";
+import SimpleList from "./Projects/SimpleList/SimpleList";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/simple-list">
+            <SimpleList />
           </Route>
           <Route exact path="/birthday-list-bootstrap">
             <BirthdayListBootstrap />

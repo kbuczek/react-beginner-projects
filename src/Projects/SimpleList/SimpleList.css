@@ -1,0 +1,99 @@
+:root {
+  --clr-white: #fff;
+  --clr-black: #222;
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(210, 10%, 80%);
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 450px;
+  --clr-salmon: #f32c52;
+  --clr-blueish: #d4e4ff;
+  --clr-ocean: #416dea;
+}
+
+/* reset all elements and pseudo-elements to use box-sizing: border-box */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.simplelist-body {
+  height: 100%;
+  background: var(--clr-blueish);
+  color: var(--clr-grey-9);
+  /* line-height: 1.5; */
+  font-size: 0.875rem;
+}
+
+.simplelist-container {
+  width: 100vw;
+  margin: 5rem 0;
+  max-width: var(--fixed-width);
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--dark-shadow);
+}
+.simplelist-container h3 {
+  font-weight: normal;
+  text-transform: none;
+  margin-bottom: 2rem;
+}
+
+.simplelist-container button {
+  color: var(--clr-white);
+  display: block;
+  width: 100%;
+  border-color: transparent;
+  background: var(--clr-ocean);
+  margin: 2rem auto 0 auto;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  letter-spacing: var(--spacing);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.simplelist-container button:hover {
+  transition: all 50ms linear;
+  background: var(--clr-salmon);
+}
+
+.simplelist-button-notactive {
+  background: var(--clr-grey-6) !important;
+}
+
+.simplelist-person {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+.simplelist-person img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--light-shadow);
+}
+.simplelist-person h4 {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 0.35rem;
+}
+.simplelist-person p {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--clr-grey-5);
+}

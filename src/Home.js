@@ -9,11 +9,8 @@ const Home = () => {
       <nav>
         <ul className="home-container">
           <li>
-            <Link
-              className="home-link home-button"
-              to="/birthday-list-bootstrap"
-            >
-              Birthday List Bootstrap
+            <Link className="home-link home-button" to="/navbar">
+              Responsive Navbar
             </Link>
           </li>
           <li>
@@ -22,8 +19,21 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link className="home-link home-button" to="/navbar">
-              Navbar
+            <Link className="home-link home-button" to="/houses-intro-list">
+              Tours Intro
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="home-link home-button"
+              to="/birthday-list-bootstrap"
+            >
+              Birthday List Bootstrap
+            </Link>
+          </li>
+          <li>
+            <Link className="home-link home-button" to="/simple-list">
+              Simple List
             </Link>
           </li>
         </ul>
