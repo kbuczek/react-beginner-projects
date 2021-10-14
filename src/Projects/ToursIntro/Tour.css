@@ -1,0 +1,30 @@
+.tour-article {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  margin: 2rem 0;
+  box-shadow: var(--light-shadow);
+  /* transition: var(--transition); */
+}
+
+.tour-article img {
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+}
+
+.tour-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.tour-price {
+  color: var(--clr-primary-5);
+  background: var(--clr-primary-10);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+}

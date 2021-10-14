@@ -27,7 +27,6 @@
 .simplelist-body {
   height: 100%;
   background: var(--clr-blueish);
-  color: var(--clr-grey-9);
   /* line-height: 1.5; */
   font-size: 0.875rem;
 }

@@ -19,7 +19,7 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link className="home-link home-button" to="/houses-intro-list">
+            <Link className="home-link home-button" to="/tours-intro">
               Tours Intro
             </Link>
           </li>

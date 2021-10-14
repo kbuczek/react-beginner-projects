@@ -6,6 +6,7 @@ import Navbar from "./Projects/Navbar/Navbar";
 import Home from "./Home";
 import Error from "./Error";
 import SimpleList from "./Projects/SimpleList/SimpleList";
+import ToursIntro from "./Projects/ToursIntro/ToursIntro";
 
 function App() {
   return (
@@ -15,17 +16,20 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/simple-list">
-            <SimpleList />
-          </Route>
-          <Route exact path="/birthday-list-bootstrap">
-            <BirthdayListBootstrap />
+          <Route exact path="/navbar">
+            <Navbar />
           </Route>
           <Route exact path="/accordion">
             <Accordion />
           </Route>
-          <Route exact path="/navbar">
-            <Navbar />
+          <Route exact path="/tours-intro">
+            <ToursIntro />
+          </Route>
+          <Route exact path="/birthday-list-bootstrap">
+            <BirthdayListBootstrap />
+          </Route>
+          <Route exact path="/simple-list">
+            <SimpleList />
           </Route>
           <Route path="*">
             <Error />
