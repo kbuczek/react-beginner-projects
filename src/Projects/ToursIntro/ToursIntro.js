@@ -25,12 +25,29 @@ const ToursIntro = () => {
     }
   };
 
+  const removeTour = (id) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  };
+
   if (loading) {
     return <Loading />;
   }
+
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="tours-intro-no-left">No tours left :(</div>
+        <div>
+          <button className="tours-intro-refresh-button">refresh data</button>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="tours-intro">
-      <Tours tours={tours} />
+      <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
 };

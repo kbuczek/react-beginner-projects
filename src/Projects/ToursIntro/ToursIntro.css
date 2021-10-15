@@ -2,3 +2,30 @@
   background: var(--color-awhite);
   font-size: 0.875rem;
 }
+
+.tours-intro-no-left {
+  margin-top: 2rem;
+  font-size: 3rem;
+  color: var(--color-salmon);
+}
+
+.tours-intro-refresh-button {
+  background: transparent;
+  border-color: transparent;
+  text-transform: capitalize;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  width: 200px;
+  margin: 1rem auto 0 auto;
+  color: var(--clr-ocean);
+  letter-spacing: var(--spacing);
+  border: 1px solid var(--clr-ocean);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+}
+
+.tours-intro-refresh-button:hover {
+  background-color: var(--clr-ocean);
+  color: var(--clr-white);
+}

@@ -5,7 +5,7 @@ import "./Accordion.css";
 
 const Accordion = () => {
   return (
-    <main>
+    <main className="acc-main">
       <div className="acc-container">
         <h4>Frequently asked questions</h4>
         <section>

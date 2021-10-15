@@ -5,6 +5,7 @@
   margin: 2rem 0;
   box-shadow: var(--light-shadow);
   /* transition: var(--transition); */
+  padding-bottom: 1rem;
 }
 
 .tour-article img {
@@ -33,4 +34,34 @@
   text-align: justify;
   color: var(--clr-grey-5);
   font-weight: 600;
+}
+
+.tour-delete-button {
+  background: transparent;
+  border-color: transparent;
+  text-transform: capitalize;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  width: 200px;
+  margin: 1rem auto 0 auto;
+  color: var(--color-salmon);
+  letter-spacing: var(--spacing);
+  border: 1px solid var(--color-salmon);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+}
+
+.tour-delete-button:hover {
+  background-color: var(--color-salmon);
+  color: var(--clr-white);
+}
+
+.tour-read-button {
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-primary-5);
+  font-size: 1rem;
+  cursor: pointer;
+  padding-left: 0.25rem;
 }
