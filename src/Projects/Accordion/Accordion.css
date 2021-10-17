@@ -1,28 +1,3 @@
-:root {
-  /* colors */
-  --clr-blue: rgb(105, 148, 248);
-  --clr-white: #fff;
-  /* properties */
-  --radius: 0.25rem;
-  --fixed-width: 920px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  line-height: 1.6;
-  font-size: 0.9rem;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .acc-container {
   /* width: 90vw; */
   margin: 4rem;

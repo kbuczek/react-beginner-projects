@@ -19,8 +19,13 @@ const Home = () => {
             </Link>
           </li>
           <li>
+            <Link className="home-link home-button" to="/reviews-bootstrap">
+              Reviews Bootstrap
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/tours-intro">
-              Tours Intro
+              Tours Intro fetch()
             </Link>
           </li>
           <li>

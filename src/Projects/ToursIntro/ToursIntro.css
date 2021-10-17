@@ -29,3 +29,7 @@
   background-color: var(--clr-ocean);
   color: var(--clr-white);
 }
+
+.tours-intro-main {
+  display: inline-block;
+}

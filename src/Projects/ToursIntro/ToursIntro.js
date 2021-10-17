@@ -36,10 +36,12 @@ const ToursIntro = () => {
 
   if (tours.length === 0) {
     return (
-      <main>
+      <main className="tours-intro-main">
         <div className="tours-intro-no-left">No tours left :(</div>
         <div>
-          <button className="tours-intro-refresh-button">refresh data</button>
+          <button className="tours-intro-refresh-button" onClick={fetchTours}>
+            refresh data
+          </button>
         </div>
       </main>
     );

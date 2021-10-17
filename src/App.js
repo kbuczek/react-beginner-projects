@@ -7,6 +7,7 @@ import Home from "./Home";
 import Error from "./Error";
 import SimpleList from "./Projects/SimpleList/SimpleList";
 import ToursIntro from "./Projects/ToursIntro/ToursIntro";
+import ReviewsBootstrap from "./Projects/ReviewsBootstrap/ReviewsBootstrap";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/accordion">
             <Accordion />
+          </Route>
+          <Route exact path="/reviews-bootstrap">
+            <ReviewsBootstrap />
           </Route>
           <Route exact path="/tours-intro">
             <ToursIntro />
