@@ -1,0 +1,17 @@
+.keyboard {
+  background-color: rgb(223, 223, 223);
+  margin: 2rem, 2rem, 2rem, 2rem;
+}
+
+#keyboard-input {
+  height: 2rem;
+}
+
+#keyboard-keys {
+  display: "flexbox";
+  flex-direction: "row";
+}
+
+.keyboard-current-key {
+  background-color: red;
+}

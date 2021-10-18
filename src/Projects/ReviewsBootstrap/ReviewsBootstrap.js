@@ -15,15 +15,17 @@ import "./ReviewsBootstrap.css";
 
 const ReviewsBootstrap = () => {
   return (
-    // <main>
-    <Container>
-      <div className="reviews-header">
-        <h2 className="reviews-title">Our clients review</h2>
-        <div className="underline"></div>
-      </div>
-      <Review />
-    </Container>
-    // </main>
+    <main className="reviews-body">
+      <Container>
+        <div className="reviews-header">
+          <h2 className="reviews-title">Our clients reviews</h2>
+          <div className="underline"></div>
+        </div>
+        <section>
+          <Review />
+        </section>
+      </Container>
+    </main>
   );
 };
 

@@ -9,6 +9,11 @@ const Home = () => {
       <nav>
         <ul className="home-container">
           <li>
+            <Link className="home-link home-button" to="/type-racer">
+              Type Racer
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/navbar">
               Responsive Navbar
             </Link>

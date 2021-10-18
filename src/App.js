@@ -8,6 +8,7 @@ import Error from "./Error";
 import SimpleList from "./Projects/SimpleList/SimpleList";
 import ToursIntro from "./Projects/ToursIntro/ToursIntro";
 import ReviewsBootstrap from "./Projects/ReviewsBootstrap/ReviewsBootstrap";
+import TypeRacer from "./Projects/TypeRacer/TypeRacer";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/type-racer">
+            <TypeRacer />
           </Route>
           <Route exact path="/navbar">
             <Navbar />

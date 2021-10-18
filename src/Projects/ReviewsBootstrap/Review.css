@@ -1,0 +1,108 @@
+.review-container {
+  background: #2a3e86;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  /* transition: var(--transition); */
+  text-align: center;
+  margin: 0 auto;
+  max-width: 40rem;
+}
+
+.review-img-container {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.review-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* box-shadow: var(--light-shadow); */
+  /* box-shadow: 2px -4px 10px 5px #ffe347; */
+  /* border: 8px solid #ffe347; */
+}
+
+.review-name {
+  color: #ffe347;
+  /* color: #f9f9f9; */
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+
+.review-job {
+  color: var(--clr-primary-5);
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.review-text {
+  color: #f9f9f9;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.review-quote-icon {
+  position: absolute;
+  top: 0;
+  left: 13rem;
+  /* margin-left: 2rem; */
+  /* margin: 0 auto; */
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  /* transform: translateY(25%); */
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+}
+
+.review-btn {
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  color: #ffe347;
+  font-size: 1.7rem;
+  font-weight: 400;
+  transition: var(--transition);
+  padding-bottom: 0.4rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  /* padding-top: 0; */
+}
+
+.review-btn-left {
+  margin-right: 0.6rem;
+}
+
+.review-btn:hover {
+  color: #2a3e86;
+  background: #ffe347;
+  border-radius: 100px;
+  /* padding: ; */
+}
+
+.review-random-btn {
+  margin-top: 1rem;
+  background: transparent;
+  border-radius: 100px;
+  border: 3px solid #ffe347;
+  color: #ffe347;
+  padding: 0.5rem;
+  /* font-weight: 800; */
+  transition: var(--transition);
+}
+
+.review-random-btn:hover {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 100px;
+  background: #ffe347;
+  color: #2a3e86;
+  font-weight: 600;
+}
