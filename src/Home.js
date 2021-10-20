@@ -14,6 +14,11 @@ const Home = () => {
             </Link>
           </li>
           <li>
+            <Link className="home-link home-button" to="/memory-game">
+              Memory Game
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/navbar">
               Responsive Navbar
             </Link>
@@ -24,8 +29,8 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link className="home-link home-button" to="/reviews-bootstrap">
-              Reviews Bootstrap
+            <Link className="home-link home-button" to="/reviews">
+              Reviews
             </Link>
           </li>
           <li>

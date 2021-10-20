@@ -9,6 +9,7 @@ import SimpleList from "./Projects/SimpleList/SimpleList";
 import ToursIntro from "./Projects/ToursIntro/ToursIntro";
 import ReviewsBootstrap from "./Projects/ReviewsBootstrap/ReviewsBootstrap";
 import TypeRacer from "./Projects/TypeRacer/TypeRacer";
+import MemoryGame from "./Projects/MemoryGame/MemoryGame";
 
 function App() {
   return (
@@ -21,13 +22,16 @@ function App() {
           <Route exact path="/type-racer">
             <TypeRacer />
           </Route>
+          <Route exact path="/memory-game">
+            <MemoryGame />
+          </Route>
           <Route exact path="/navbar">
             <Navbar />
           </Route>
           <Route exact path="/accordion">
             <Accordion />
           </Route>
-          <Route exact path="/reviews-bootstrap">
+          <Route exact path="/reviews">
             <ReviewsBootstrap />
           </Route>
           <Route exact path="/tours-intro">

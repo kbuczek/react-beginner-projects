@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Container,
-  Row,
-  Image,
-  Col,
-  Modal,
-  Form,
-} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { FaGithubSquare } from "react-icons/fa";
 import Review from "./Review";
 import data from "./data.js";
@@ -18,7 +10,7 @@ const ReviewsBootstrap = () => {
     <main className="reviews-body">
       <Container>
         <div className="reviews-header">
-          <h2 className="reviews-title">Our clients reviews</h2>
+          <h2 className="reviews-title">Our reviews</h2>
           <div className="underline"></div>
         </div>
         <section>
