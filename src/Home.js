@@ -10,12 +10,12 @@ const Home = () => {
         <ul className="home-container">
           <li>
             <Link className="home-link home-button" to="/type-racer">
-              Type Racer
+              TYPE RACER
             </Link>
           </li>
           <li>
             <Link className="home-link home-button" to="/memory-game">
-              Memory Game
+              MEMORY GAME
             </Link>
           </li>
           <li>

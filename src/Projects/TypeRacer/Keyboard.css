@@ -7,9 +7,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid #1da41c;
+  border: 4px solid #1669d6;
   border-radius: 6px;
+  background: #f6faff;
   font-size: 1.5rem;
+  font-weight: 600;
   width: 30rem;
   height: 4rem;
   margin: 0 auto;
@@ -43,11 +45,19 @@
   border-bottom: 3px solid rgba(0, 0, 0, 0.6);
 }
 
+.keyboard-key-space {
+  width: 29rem;
+}
+
 .keyboard-current-key {
   transition: all 100ms linear;
-  background: rgb(117, 117, 117) !important;
+  background: rgb(233, 233, 233) !important;
   border-top: 2px solid rgba(0, 0, 0, 0.6);
   border-bottom: 0px;
+  color: rgb(17, 17, 17);
+  -webkit-box-shadow: inset 1px 13px 30px -10px rgba(66, 68, 90, 0.5);
+  -moz-box-shadow: inset 1px 13px 30px -10px rgba(66, 68, 90, 0.5);
+  box-shadow: inset 1px 13px 30px -10px rgba(66, 68, 90, 0.7);
 }
 
 #keyboard-keys-row1 {
@@ -61,6 +71,11 @@
 }
 
 #keyboard-keys-row3 {
+  display: flex;
+  justify-content: center;
+}
+
+#keyboard-keys-row4 {
   display: flex;
   justify-content: center;
 }

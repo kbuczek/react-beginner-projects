@@ -2,7 +2,7 @@ import React from "react";
 import react, { useState } from "react";
 import "./Keyboard.css";
 
-const Keyboard = ({ level }) => {
+const Keyboard = ({ level, setCurrentWord }) => {
   const [userInput, setUserInput] = useState(
     "click here and start typing text above"
   );
@@ -34,10 +34,15 @@ const Keyboard = ({ level }) => {
     "b",
     "n",
     "m",
+    " ",
   ];
 
   const resetUserInput = () => {
-    setUserInput([]);
+    setUserInput("");
+  };
+
+  const removeLastLetterUserInput = () => {
+    setUserInput(userInput.slice(0, -1));
   };
 
   const handleKeyDown = (e) => {
@@ -45,12 +50,14 @@ const Keyboard = ({ level }) => {
 
     if (key === " ") {
       setCurrentKey(key);
+      setCurrentWord(userInput);
       resetUserInput();
     } else if (alphabet.includes(key)) {
       setCurrentKey(key);
       setUserInput([...userInput, key]);
     } else if (key === "Backspace") {
-      resetUserInput();
+      // resetUserInput();
+      removeLastLetterUserInput();
     }
   };
 
@@ -104,6 +111,21 @@ const Keyboard = ({ level }) => {
                 id={letter}
                 className={`
                   keyboard-key
+                  ${currentKey === letter ? "keyboard-current-key" : ""}
+                )`}
+              >
+                {letter.toUpperCase()}
+              </div>
+            );
+          })}
+        </div>
+        <div id="keyboard-keys-row4">
+          {alphabet.slice(26, 27).map((letter) => {
+            return (
+              <div
+                id={letter}
+                className={`
+                  keyboard-key keyboard-key-space
                   ${currentKey === letter ? "keyboard-current-key" : ""}
                 )`}
               >
