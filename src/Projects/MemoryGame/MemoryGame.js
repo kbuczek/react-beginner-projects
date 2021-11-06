@@ -3,32 +3,31 @@ import data from "./data";
 import "./MemoryGame.css";
 
 const SimpleList = () => {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(data);
   const [clickedCardName, setClickedCardName] = useState(" ");
   const [score, setScore] = useState(0);
 
   useEffect(() => {
-    console.log("cards", cards);
-    setCards(data);
+    console.log(cards);
     duplicateData();
+    console.log("EFFECT");
   }, []);
 
   const duplicateData = () => {
-    const duplicatedData = [...data];
-    // const duplicatedData = data.map((item) => {
-    //   item.id = item.id + data.length; //why it changes on original array?
-    //   return item;
-    // });
-    console.log("duplicatedData1", duplicatedData);
+    const duplicatedData = [...cards];
     duplicatedData.forEach((item) => {
       item.id = item.id + duplicatedData.length;
     });
-    // console.log("duplicatedData", duplicatedData);
-    // setCards([...cards, duplicatedData]);
-    console.log("new cards", cards);
+    setCards([...data, ...duplicatedData]);
   };
 
-  const shuffuleCards = () => {};
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    setCards(array);
+  };
 
   return (
     <main className="memory-body">

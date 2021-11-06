@@ -2,38 +2,38 @@ import React from "react";
 import react, { useState } from "react";
 import "./Keyboard.css";
 
-const Keyboard = () => {
+const Keyboard = ({ level }) => {
   const [userInput, setUserInput] = useState(
-    "click here and start typing to play!"
+    "click here and start typing text above"
   );
   const [currentKey, setCurrentKey] = useState("");
   const alphabet = [
-    "a",
-    "b",
-    "c",
-    "d",
+    "q",
+    "w",
     "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+    "a",
+    "s",
+    "d",
     "f",
     "g",
     "h",
-    "i",
     "j",
     "k",
     "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
     "z",
+    "x",
+    "c",
+    "v",
+    "b",
+    "n",
+    "m",
   ];
 
   const resetUserInput = () => {
@@ -67,16 +67,51 @@ const Keyboard = () => {
       </div>
 
       <div id="keyboard-keys">
-        {alphabet.map((letter) => {
-          return (
-            <div
-              id={letter}
-              className={currentKey === letter && "keyboard-current-key"}
-            >
-              {letter}
-            </div>
-          );
-        })}
+        <div id="keyboard-keys-row1">
+          {alphabet.slice(0, 10).map((letter) => {
+            return (
+              <div
+                id={letter}
+                className={`
+                  keyboard-key
+                  ${currentKey === letter ? "keyboard-current-key" : ""}
+                )`}
+              >
+                {letter.toUpperCase()}
+              </div>
+            );
+          })}
+        </div>
+        <div id="keyboard-keys-row2">
+          {alphabet.slice(10, 19).map((letter) => {
+            return (
+              <div
+                id={letter}
+                className={`
+                  keyboard-key
+                  ${currentKey === letter ? "keyboard-current-key" : ""}
+                )`}
+              >
+                {letter.toUpperCase()}
+              </div>
+            );
+          })}
+        </div>
+        <div id="keyboard-keys-row3">
+          {alphabet.slice(19, 26).map((letter) => {
+            return (
+              <div
+                id={letter}
+                className={`
+                  keyboard-key
+                  ${currentKey === letter ? "keyboard-current-key" : ""}
+                )`}
+              >
+                {letter.toUpperCase()}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
