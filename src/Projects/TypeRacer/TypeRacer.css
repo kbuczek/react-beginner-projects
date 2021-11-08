@@ -12,3 +12,25 @@
   margin-bottom: 6rem;
   text-align: justify;
 }
+
+.typeracer-word {
+  transition: all 300ms linear;
+  margin: 0 0.1rem 0 0.1rem;
+}
+
+.typeracer-word-current {
+  transition: all 300ms linear;
+  background-color: rgb(243, 204, 130);
+  color: black;
+  border-radius: 5px;
+}
+
+.typeracer-word-correct {
+  transition: all 300ms linear;
+  color: green;
+}
+
+.typeracer-word-wrong {
+  transition: all 300ms linear;
+  color: red;
+}
