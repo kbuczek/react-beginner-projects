@@ -2,7 +2,7 @@ import React from "react";
 import react, { useState } from "react";
 import "./Keyboard.css";
 
-const Keyboard = ({ level, setCurrentWord }) => {
+const Keyboard = ({ level, setCurrentWord, setStartTimer }) => {
   const [userInput, setUserInput] = useState(
     "click here and start typing text above"
   );
@@ -39,6 +39,7 @@ const Keyboard = ({ level, setCurrentWord }) => {
 
   const resetUserInput = () => {
     setUserInput("");
+    setStartTimer(true);
   };
 
   const removeLastLetterUserInput = () => {
@@ -54,7 +55,9 @@ const Keyboard = ({ level, setCurrentWord }) => {
       resetUserInput();
     } else if (alphabet.includes(key)) {
       setCurrentKey(key);
-      setUserInput([...userInput, key]);
+      setUserInput((prev) => {
+        return (prev += key);
+      });
     } else if (key === "Backspace") {
       // resetUserInput();
       removeLastLetterUserInput();
@@ -78,7 +81,7 @@ const Keyboard = ({ level, setCurrentWord }) => {
           {alphabet.slice(0, 10).map((letter) => {
             return (
               <div
-                id={letter}
+                key={letter}
                 className={`
                   keyboard-key
                   ${currentKey === letter ? "keyboard-current-key" : ""}
@@ -93,7 +96,7 @@ const Keyboard = ({ level, setCurrentWord }) => {
           {alphabet.slice(10, 19).map((letter) => {
             return (
               <div
-                id={letter}
+                key={letter}
                 className={`
                   keyboard-key
                   ${currentKey === letter ? "keyboard-current-key" : ""}
@@ -108,7 +111,7 @@ const Keyboard = ({ level, setCurrentWord }) => {
           {alphabet.slice(19, 26).map((letter) => {
             return (
               <div
-                id={letter}
+                key={letter}
                 className={`
                   keyboard-key
                   ${currentKey === letter ? "keyboard-current-key" : ""}
@@ -123,7 +126,7 @@ const Keyboard = ({ level, setCurrentWord }) => {
           {alphabet.slice(26, 27).map((letter) => {
             return (
               <div
-                id={letter}
+                key={letter}
                 className={`
                   keyboard-key keyboard-key-space
                   ${currentKey === letter ? "keyboard-current-key" : ""}

@@ -13,11 +13,11 @@ const Home = () => {
               TYPE RACER
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link className="home-link home-button" to="/memory-game">
               MEMORY GAME
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link className="home-link home-button" to="/navbar">
               Responsive Navbar
@@ -51,6 +51,12 @@ const Home = () => {
               Simple List
             </Link>
           </li>
+          <a
+            className="home-github"
+            href="https://github.com/kbuczek/react-beginner-projects"
+          >
+            Source code on github
+          </a>
         </ul>
       </nav>
     </>
