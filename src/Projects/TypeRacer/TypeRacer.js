@@ -118,7 +118,8 @@ const TypeRacer = () => {
     // setCurrentWordIndex(-1);
     // setWordsArrayValues(["current"]);
     // setDisplayModal(false);
-    window.location.reload(false);
+    // window.location.reload(true);
+    window.location.href = "https://kbuczek-react.netlify.app/type-racer";
   };
 
   const getRandomInt = (min, max) => {
