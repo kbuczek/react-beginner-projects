@@ -4,20 +4,44 @@ import level from "./data/level1";
 import "./TypeRacer.css";
 
 const TypeRacer = () => {
+  const [displayModal, setDisplayModal] = useState(true);
   const [currentWord, setCurrentWord] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(-1);
   const [wordsArray, setWordsArray] = useState([]);
   const [wordsArrayValues, setWordsArrayValues] = useState([]);
+  //timer
   const [startTimer, setStartTimer] = useState(false);
-  const [displayModal, setDisplayModal] = useState(false);
+  const [timer, setTimer] = useState(-1);
+  //words numbers
+  const [numOfAllWords, setNumOfAllWords] = useState(0);
+  const [numOfCorrectWords, setNumOfCorrectWords] = useState(0);
+  const [numOfCorrectLetters, setNumOfCorrectLetters] = useState(0);
+  const [numOfWrongWords, setNumOfWrongWords] = useState(0);
+  const [numOfWrongLetters, setNumOfWrongLetters] = useState(0);
 
   useEffect(() => {
     loadWordsArray();
   }, []);
 
   useEffect(() => {
+    setNumOfAllWords(wordsArray.length);
+  }, [wordsArray]);
+
+  useEffect(() => {
     checkCurrentWord();
   }, [currentWord]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTimer(timer + 1);
+    }, 1000);
+  }, [startTimer]);
+
+  useEffect(() => {
+    if (numOfCorrectWords + numOfWrongWords === numOfAllWords) {
+      // setDisplayModal(true);
+    }
+  }, [numOfCorrectWords, numOfWrongWords, numOfAllWords]);
 
   const loadWordsArray = () => {
     setWordsArray(level.text.split(" "));
@@ -32,11 +56,23 @@ const TypeRacer = () => {
           newArr[currentWordIndex] = "correct";
           return newArr;
         });
+        setNumOfCorrectWords((prev) => {
+          return prev + 1;
+        });
+        setNumOfCorrectLetters((prev) => {
+          return prev + currentWord.length;
+        });
       } else {
         setWordsArrayValues((prev) => {
           let newArr = [...prev];
           newArr[currentWordIndex] = "wrong";
           return newArr;
+        });
+        setNumOfWrongWords((prev) => {
+          return prev + 1;
+        });
+        setNumOfWrongLetters((prev) => {
+          return prev + wordsArray[currentWordIndex].length;
         });
       }
       setWordsArrayValues((prev) => {
@@ -62,9 +98,16 @@ const TypeRacer = () => {
       {displayModal && (
         <div id="myModal" className="modal">
           <div className="modal-content">
-            <p>correct words</p>
-            <p>time</p>
-            <p>WPM</p>
+            <div>Your results</div>
+            <p>
+              WPM:{" "}
+              {numOfCorrectLetters / 5 / (timer / 60) -
+                numOfWrongLetters / (timer / 60)}
+            </p>
+            <p>correct words: {numOfCorrectWords}</p>
+            <p>wrong words: {numOfWrongWords}</p>
+            <p>time: {timer} seconds</p>
+
             <button onClick={refreshPage}>Try again</button>
           </div>
         </div>
@@ -96,9 +139,10 @@ const TypeRacer = () => {
             );
           })}
         </div>
-        <div>{currentWord}</div>
-        <div>{startTimer.toString()}</div>
-        <div>{currentWordIndex}</div>
+        <div>{timer} seconds</div>
+        <div>
+          {numOfCorrectWords + numOfWrongWords} / {numOfAllWords} words
+        </div>
         <div>
           <Keyboard
             level={level}

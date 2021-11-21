@@ -16,6 +16,7 @@
 .typeracer-word {
   transition: all 100ms linear;
   margin: 0 0.1rem 0 0.1rem;
+  font-size: 110%;
 }
 
 .typeracer-word-current {
@@ -23,19 +24,19 @@
   background-color: rgb(228, 132, 22);
   color: rgb(255, 255, 255);
   border-radius: 5px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .typeracer-word-correct {
   transition: all 100ms linear;
   color: green;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .typeracer-word-wrong {
   transition: all 100ms linear;
   color: red;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .modal {
