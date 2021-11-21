@@ -1,6 +1,7 @@
 import react, { useState, useEffect } from "react";
 import Keyboard from "./Keyboard";
 import level from "./data/level1";
+import { BsArrowClockwise } from "react-icons/bs";
 import "./TypeRacer.css";
 
 const TypeRacer = () => {
@@ -12,6 +13,7 @@ const TypeRacer = () => {
   const [wordsArrayValues, setWordsArrayValues] = useState([]);
   //timer
   const [startTimer, setStartTimer] = useState(false);
+  // const setStartTimer = false;
   const [timer, setTimer] = useState(0);
   //words numbers
   const [numOfAllWords, setNumOfAllWords] = useState(0);
@@ -21,13 +23,14 @@ const TypeRacer = () => {
   const [numOfWrongLetters, setNumOfWrongLetters] = useState(0);
 
   useEffect(() => {
-    loadWordsArray();
-    // loadWordsPool();
+    loadWordsPool();
   }, []);
 
-  // useEffect(() => {
-  //   loadWordsArray();
-  // }, [wordsPool]);
+  useEffect(() => {
+    if (wordsPool.length > 0) {
+      loadWordsArray();
+    }
+  }, [wordsPool]);
 
   useEffect(() => {
     setNumOfAllWords(wordsArray.length);
@@ -56,17 +59,16 @@ const TypeRacer = () => {
   }, [numOfCorrectWords, numOfWrongWords]);
 
   const loadWordsPool = () => {
-    // setWordsPool(level.text2.split(", "));
-    // wordsPool2 = level.text2.split(", ");
+    setWordsPool(level.text.split(", "));
   };
 
   const loadWordsArray = () => {
-    // console.log(wordsPool[0]);
-    // for (let i = 0; i < 42; i++) {
-    //   const randInt = getRandomInt(0, 1000);
-    //   setWordsArray((prev) => [...prev, wordsPool[randInt]]);
-    // }
-    setWordsArray(level.text.split(" "));
+    console.log(wordsPool[0]);
+    for (let i = 0; i < 2; i++) {
+      const randInt = getRandomInt(0, 1000);
+      setWordsArray((prev) => [...prev, wordsPool[randInt]]);
+    }
+    // setWordsArray(level.text.split(" "));
     setWordsArrayValues((oldArray) => [...oldArray, "current"]);
   };
 
@@ -122,24 +124,38 @@ const TypeRacer = () => {
   };
 
   const calcWPM = () => {
-    return Math.round(
+    console.log(numOfCorrectLetters);
+    console.log(numOfWrongLetters);
+    console.log(timer);
+    const wpm = Math.round(
       numOfCorrectLetters / 5 / (timer / 60) -
         numOfWrongLetters / 5 / (timer / 60)
     );
+    if (wpm > 0) {
+      return wpm;
+    } else {
+      return 0;
+    }
   };
 
   return (
     <>
       {displayModal && (
-        <div id="myModal" className="modal">
-          <div className="modal-content">
-            <div>Your results</div>
-            <p>WPM: {calcWPM()}</p>
-            <p>correct words: {numOfCorrectWords}</p>
-            <p>wrong words: {numOfWrongWords}</p>
-            <p>time: {timer} seconds</p>
+        <div id="myModal" className="typeracer-modal">
+          <div className="typeracer-modal-content">
+            <div className="typeracer-modal-title">Your results</div>
+            <p className="typeracer-modal-wpm">{calcWPM()} WPM</p>
+            <p className="typeracer-modal-correctwords">
+              correct words: {numOfCorrectWords}
+            </p>
+            <p className="typeracer-modal-wrongwords">
+              wrong words: {numOfWrongWords}
+            </p>
+            <p className="typeracer-modal-timer">time: {timer} seconds</p>
 
-            <button onClick={refreshPage}>Try again</button>
+            <button className="typeracer-button2" onClick={refreshPage}>
+              Try again
+            </button>
           </div>
         </div>
       )}
@@ -170,11 +186,15 @@ const TypeRacer = () => {
             );
           })}
         </div>
-        <div>{timer} seconds</div>
-        <div>
-          {numOfCorrectWords + numOfWrongWords} / {numOfAllWords} words
+        <div className="typeracer-info">
+          <div className="typeracer-info-timer">{timer} seconds</div>
+          <div className="typeracer-info-words">
+            {numOfCorrectWords + numOfWrongWords} / {numOfAllWords} words
+          </div>
+          <button className="button-11" onClick={refreshPage}>
+            try again
+          </button>
         </div>
-        <button onClick={refreshPage}>Try again</button>
         <div>
           <Keyboard
             level={level}
