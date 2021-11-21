@@ -13,7 +13,6 @@ const TypeRacer = () => {
   const [wordsArrayValues, setWordsArrayValues] = useState([]);
   //timer
   const [startTimer, setStartTimer] = useState(false);
-  // const setStartTimer = false;
   const [timer, setTimer] = useState(0);
   //words numbers
   const [numOfAllWords, setNumOfAllWords] = useState(0);
@@ -54,17 +53,22 @@ const TypeRacer = () => {
       numOfAllWords > 0
     ) {
       setStartTimer(false);
-      setDisplayModal(true);
+      // setDisplayModal(true);
     }
   }, [numOfCorrectWords, numOfWrongWords]);
+
+  useEffect(() => {
+    if (startTimer === false && timer > 0) {
+      setDisplayModal(true);
+    }
+  }, [timer]);
 
   const loadWordsPool = () => {
     setWordsPool(level.text.split(", "));
   };
 
   const loadWordsArray = () => {
-    console.log(wordsPool[0]);
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 10; i++) {
       const randInt = getRandomInt(0, 1000);
       setWordsArray((prev) => [...prev, wordsPool[randInt]]);
     }
@@ -124,9 +128,6 @@ const TypeRacer = () => {
   };
 
   const calcWPM = () => {
-    console.log(numOfCorrectLetters);
-    console.log(numOfWrongLetters);
-    console.log(timer);
     const wpm = Math.round(
       numOfCorrectLetters / 5 / (timer / 60) -
         numOfWrongLetters / 5 / (timer / 60)
