@@ -4,14 +4,15 @@ import level from "./data/level1";
 import "./TypeRacer.css";
 
 const TypeRacer = () => {
-  const [displayModal, setDisplayModal] = useState(true);
+  const [displayModal, setDisplayModal] = useState(false);
   const [currentWord, setCurrentWord] = useState("");
   const [currentWordIndex, setCurrentWordIndex] = useState(-1);
+  const [wordsPool, setWordsPool] = useState([]);
   const [wordsArray, setWordsArray] = useState([]);
   const [wordsArrayValues, setWordsArrayValues] = useState([]);
   //timer
   const [startTimer, setStartTimer] = useState(false);
-  const [timer, setTimer] = useState(-1);
+  const [timer, setTimer] = useState(0);
   //words numbers
   const [numOfAllWords, setNumOfAllWords] = useState(0);
   const [numOfCorrectWords, setNumOfCorrectWords] = useState(0);
@@ -21,7 +22,12 @@ const TypeRacer = () => {
 
   useEffect(() => {
     loadWordsArray();
+    // loadWordsPool();
   }, []);
+
+  // useEffect(() => {
+  //   loadWordsArray();
+  // }, [wordsPool]);
 
   useEffect(() => {
     setNumOfAllWords(wordsArray.length);
@@ -32,18 +38,34 @@ const TypeRacer = () => {
   }, [currentWord]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setTimer(timer + 1);
-    }, 1000);
-  }, [startTimer]);
+    if (startTimer === true) {
+      setTimeout(() => {
+        setTimer(timer + 1);
+      }, 1000);
+    }
+  });
 
   useEffect(() => {
-    if (numOfCorrectWords + numOfWrongWords === numOfAllWords) {
-      // setDisplayModal(true);
+    if (
+      numOfCorrectWords + numOfWrongWords === numOfAllWords &&
+      numOfAllWords > 0
+    ) {
+      setStartTimer(false);
+      setDisplayModal(true);
     }
-  }, [numOfCorrectWords, numOfWrongWords, numOfAllWords]);
+  }, [numOfCorrectWords, numOfWrongWords]);
+
+  const loadWordsPool = () => {
+    // setWordsPool(level.text2.split(", "));
+    // wordsPool2 = level.text2.split(", ");
+  };
 
   const loadWordsArray = () => {
+    // console.log(wordsPool[0]);
+    // for (let i = 0; i < 42; i++) {
+    //   const randInt = getRandomInt(0, 1000);
+    //   setWordsArray((prev) => [...prev, wordsPool[randInt]]);
+    // }
     setWordsArray(level.text.split(" "));
     setWordsArrayValues((oldArray) => [...oldArray, "current"]);
   };
@@ -93,17 +115,26 @@ const TypeRacer = () => {
     window.location.reload(false);
   };
 
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  };
+
+  const calcWPM = () => {
+    return Math.round(
+      numOfCorrectLetters / 5 / (timer / 60) -
+        numOfWrongLetters / 5 / (timer / 60)
+    );
+  };
+
   return (
     <>
       {displayModal && (
         <div id="myModal" className="modal">
           <div className="modal-content">
             <div>Your results</div>
-            <p>
-              WPM:{" "}
-              {numOfCorrectLetters / 5 / (timer / 60) -
-                numOfWrongLetters / (timer / 60)}
-            </p>
+            <p>WPM: {calcWPM()}</p>
             <p>correct words: {numOfCorrectWords}</p>
             <p>wrong words: {numOfWrongWords}</p>
             <p>time: {timer} seconds</p>
@@ -143,6 +174,7 @@ const TypeRacer = () => {
         <div>
           {numOfCorrectWords + numOfWrongWords} / {numOfAllWords} words
         </div>
+        <button onClick={refreshPage}>Try again</button>
         <div>
           <Keyboard
             level={level}
