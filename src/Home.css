@@ -110,3 +110,45 @@
   font-size: 1rem;
   font-weight: 600;
 }
+
+.home-button-red {
+  display: inline-flex;
+  overflow: hidden;
+
+  margin: 10px;
+  padding: 0.8rem 2rem 0.8rem 2rem;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+
+  color: var(--color-snow);
+  background: var(--color-salmon);
+  border: 0 none;
+  border-radius: var(--borderRadius);
+
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 160px;
+
+  box-shadow: 2px 5px 10px var(--color-smoke);
+}
+
+.home-button-red:hover {
+  transition: all 150ms linear;
+  padding: 1rem 3.5rem 1rem 3.5rem;
+  opacity: 0.9;
+}

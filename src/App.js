@@ -10,6 +10,7 @@ import ToursIntro from "./Projects/ToursIntro/ToursIntro";
 import ReviewsBootstrap from "./Projects/ReviewsBootstrap/ReviewsBootstrap";
 import TypeRacer from "./Projects/TypeRacer/TypeRacer";
 import MemoryGame from "./Projects/MemoryGame/MemoryGame";
+import Menu from "./Projects/Menu/Menu";
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/navbar">
             <Navbar />
+          </Route>
+          <Route exact path="/menu">
+            <Menu />
           </Route>
           <Route exact path="/accordion">
             <Accordion />

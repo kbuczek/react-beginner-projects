@@ -9,9 +9,17 @@ const Home = () => {
       <nav>
         <ul className="home-container">
           <li>
-            <Link className="home-link home-button" to="/type-racer">
-              TYPE RACER
+            <Link className="home-link home-button-red" to="/type-racer">
+              type racer
             </Link>
+          </li>
+          <li>
+            <a
+              className="home-link home-button-red"
+              href="https://hardsoft.netlify.app/"
+            >
+              HARDSoft webpage
+            </a>
           </li>
           {/* <li>
             <Link className="home-link home-button" to="/memory-game">
@@ -21,6 +29,11 @@ const Home = () => {
           <li>
             <Link className="home-link home-button" to="/navbar">
               Responsive Navbar
+            </Link>
+          </li>
+          <li>
+            <Link className="home-link home-button" to="/menu">
+              Menu
             </Link>
           </li>
           <li>
