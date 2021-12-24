@@ -33,7 +33,7 @@ const Home = () => {
           </li>
           <li>
             <Link className="home-link home-button" to="/menu">
-              Menu
+              Menu Filters
             </Link>
           </li>
           <li>
