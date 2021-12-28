@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BirthdayListBootstrap from "./Projects/BirthdayListBootstrap/BirthdayList";
 import Accordion from "./Projects/Accordion/Accordion";
+import Navbar2 from "./Projects/Navbar2/Navbar2";
 import Navbar from "./Projects/Navbar/Navbar";
 import Home from "./Home";
 import Error from "./Error";
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path="/memory-game">
             <MemoryGame />
+          </Route>
+          <Route exact path="/navbar2">
+            <Navbar2 />
           </Route>
           <Route exact path="/navbar">
             <Navbar />

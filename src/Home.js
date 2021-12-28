@@ -22,13 +22,18 @@ const Home = () => {
             </a>
           </li>
           {/* <li>
-            <Link className="home-link home-button" to="/memory-game">
+            <Link className="home-link home-button-red" to="/memory-game">
               MEMORY GAME
             </Link>
           </li> */}
           <li>
+            <Link className="home-link home-button" to="/navbar2">
+              Navbar 2
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/navbar">
-              Responsive Navbar
+              Navbar
             </Link>
           </li>
           <li>
