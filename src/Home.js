@@ -28,7 +28,7 @@ const Home = () => {
           </li> */}
           <li>
             <Link className="home-link home-button" to="/navbar2">
-              Navbar 2
+              Navbar with Dropdown
             </Link>
           </li>
           <li>
