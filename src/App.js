@@ -13,6 +13,17 @@ import TypeRacer from "./Projects/TypeRacer/TypeRacer";
 import MemoryGame from "./Projects/MemoryGame/MemoryGame";
 import Menu from "./Projects/Menu/Menu";
 
+import Link1 from "./Projects/Navbar2/pages/Link1";
+import Link2 from "./Projects/Navbar2/pages/Link2";
+import Link3 from "./Projects/Navbar2/pages/Link3";
+import Link4 from "./Projects/Navbar2/pages/Link4";
+import Dropdown1 from "./Projects/Navbar2/pages/Dropdown1";
+import Dropdown2 from "./Projects/Navbar2/pages/Dropdown2";
+import Dropdown3 from "./Projects/Navbar2/pages/Dropdown3";
+import Dropdown11 from "./Projects/Navbar2/pages/Dropdown11";
+import Dropdown22 from "./Projects/Navbar2/pages/Dropdown22";
+import Dropdown33 from "./Projects/Navbar2/pages/Dropdown33";
+
 function App() {
   return (
     <div className="App">
@@ -50,6 +61,36 @@ function App() {
           </Route>
           <Route exact path="/simple-list">
             <SimpleList />
+          </Route>
+          <Route exact path="/link-1">
+            <Link1 />
+          </Route>
+          <Route exact path="/link-2">
+            <Link2 />
+          </Route>
+          <Route exact path="/link-3">
+            <Link3 />
+          </Route>
+          <Route exact path="/link-4">
+            <Link4 />
+          </Route>
+          <Route exact path="/dropdown-1">
+            <Dropdown1 />
+          </Route>
+          <Route exact path="/dropdown-2">
+            <Dropdown2 />
+          </Route>
+          <Route exact path="/dropdown-3">
+            <Dropdown3 />
+          </Route>
+          <Route exact path="/dropdown-11">
+            <Dropdown11 />
+          </Route>
+          <Route exact path="/dropdown-22">
+            <Dropdown22 />
+          </Route>
+          <Route exact path="/dropdown-33">
+            <Dropdown33 />
           </Route>
           <Route path="*">
             <Error />

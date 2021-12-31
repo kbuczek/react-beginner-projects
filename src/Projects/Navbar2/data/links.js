@@ -9,9 +9,9 @@ const links = [
     url: "/link-2",
     text: "Link 2",
     dropdown: [
-      { id: 1, url: "/dropdown1", text: "Dropdown 1" },
-      { id: 2, url: "/dropdown2", text: "Dropdown 2" },
-      { id: 3, url: "/dropdown3", text: "Dropdown 3" },
+      { id: 1, url: "/dropdown-1", text: "Dropdown 1" },
+      { id: 2, url: "/dropdown-2", text: "Dropdown 2" },
+      { id: 3, url: "/dropdown-3", text: "Dropdown 3" },
     ],
   },
   {
@@ -19,9 +19,9 @@ const links = [
     url: "/link-3",
     text: "Link 3",
     dropdown: [
-      { id: 1, url: "/dropdown11", text: "Dropdown 11" },
-      { id: 2, url: "/dropdown22", text: "Dropdown 22" },
-      { id: 3, url: "/dropdown33", text: "Dropdown 33" },
+      { id: 1, url: "/dropdown-11", text: "Dropdown 11" },
+      { id: 2, url: "/dropdown-22", text: "Dropdown 22" },
+      { id: 3, url: "/dropdown-33", text: "Dropdown 33" },
     ],
   },
   {

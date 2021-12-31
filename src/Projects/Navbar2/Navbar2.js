@@ -12,35 +12,54 @@ const Navbar2 = () => {
 
   const closeMobileMenu = () => setToggleMenu(false);
 
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setToggleDropdown(false);
+    } else {
+      setToggleDropdown(true); //enableDropdown
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setToggleDropdown(false);
+    } else {
+      setToggleDropdown(false);
+    }
+  };
+
   return (
     <nav className="navbar2">
       <Link to="/" className="navbar2-logo">
         Your Logo
       </Link>
-      <div
-        className="navbar2-menu-icon"
-        onClick={() => setToggleMenu(!toggleMenu)}
-      >
+      <div className="navbar2-bars" onClick={() => setToggleMenu(!toggleMenu)}>
         {toggleMenu ? <FaTimes /> : <FaBars />}
       </div>
       <ul className={`navbar2-menu ${toggleMenu && "active"}`}>
         {links.map(({ id, url, text, dropdown }) => {
           return (
-            <li className="navbar2-menu-item" key={id}>
+            <li
+              className="navbar2-menu-item"
+              key={id}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+            >
               <Link
                 to={url}
                 className="navbar2-menu-link"
                 onClick={closeMobileMenu}
               >
                 {text}
-                {dropdown && <FaCaretDown />}
-                {dropdown && (
+                {dropdown && <FaCaretDown className="FaCaretDown" />}
+                {dropdown && toggleDropdown ? (
                   <Dropdown
                     dropdown={dropdown}
                     setToggleMenu={setToggleMenu}
                     setToggleDropdown={setToggleDropdown}
-                    W
                   />
+                ) : (
+                  ""
                 )}
               </Link>
             </li>
