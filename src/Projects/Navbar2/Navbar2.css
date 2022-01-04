@@ -3,7 +3,7 @@
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   height: 80px;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   font-size: 1.2rem;
 }
@@ -16,11 +16,6 @@
   text-decoration: none;
   font-size: 2rem;
 }
-/* 
-.fa-firstdraft {
-  margin-left: 0.5rem;
-  font-size: 1.6rem;
-} */
 
 .navbar2-menu {
   display: grid;
