@@ -1,8 +1,10 @@
 .dropdown {
   width: 200px;
   position: absolute;
-  top: 60px;
+  top: 80px;
   text-align: start;
+  color: #fff;
+  /* margin-top: 18px; */
 }
 
 .dropdown-list {
@@ -10,12 +12,18 @@
 }
 
 .dropdown-list-item {
-  background: #1888ff;
+  background-color: #1888ff;
   cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  padding: 16px;
 }
 
 .dropdown-list-item:hover {
-  background: #5cabff;
+  background-color: #5cabff;
 }
 
 .dropdown-list.clicked {
@@ -23,12 +31,13 @@
 }
 
 .dropdown-link {
-  display: block;
-  width: 100%;
-  height: 100%;
   text-decoration: none;
   color: #fff;
-  padding: 16px;
+}
+
+.dropdown-link:hover {
+  text-decoration: none;
+  color: #fff;
 }
 
 @media screen and (max-width: 960px) {

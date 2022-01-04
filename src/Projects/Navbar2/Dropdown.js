@@ -9,7 +9,6 @@ const Dropdown = ({ dropdown, setToggleMenu, setToggleDropdown }) => {
     <div
       className="dropdown"
       onClick={() => {
-        // setToggleMenu((prev) => !prev);
         setClick(!click);
       }}
     >
@@ -17,7 +16,11 @@ const Dropdown = ({ dropdown, setToggleMenu, setToggleDropdown }) => {
         {dropdown.map(({ id, url, text }) => {
           return (
             <li className="dropdown-list-item" key={id}>
-              <Link to={url} onClick={() => setClick(false)}>
+              <Link
+                to={url}
+                onClick={() => setClick(false)}
+                className="dropdown-link"
+              >
                 {text}
               </Link>
             </li>

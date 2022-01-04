@@ -63,33 +63,43 @@ function App() {
             <SimpleList />
           </Route>
           <Route exact path="/link-1">
+            <Navbar2 />
             <Link1 />
           </Route>
           <Route exact path="/link-2">
+            <Navbar2 />
             <Link2 />
           </Route>
           <Route exact path="/link-3">
+            <Navbar2 />
             <Link3 />
           </Route>
           <Route exact path="/link-4">
+            <Navbar2 />
             <Link4 />
           </Route>
           <Route exact path="/dropdown-1">
+            <Navbar2 />
             <Dropdown1 />
           </Route>
           <Route exact path="/dropdown-2">
+            <Navbar2 />
             <Dropdown2 />
           </Route>
           <Route exact path="/dropdown-3">
+            <Navbar2 />
             <Dropdown3 />
           </Route>
           <Route exact path="/dropdown-11">
+            <Navbar2 />
             <Dropdown11 />
           </Route>
           <Route exact path="/dropdown-22">
+            <Navbar2 />
             <Dropdown22 />
           </Route>
           <Route exact path="/dropdown-33">
+            <Navbar2 />
             <Dropdown33 />
           </Route>
           <Route path="*">

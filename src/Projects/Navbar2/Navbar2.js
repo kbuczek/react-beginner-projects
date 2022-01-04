@@ -7,25 +7,21 @@ import { FaTimes, FaBars, FaCaretDown } from "react-icons/fa";
 import "./Navbar2.css";
 
 const Navbar2 = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const [toggleDropdown, setToggleDropdown] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [toggleDropdown, setToggleDropdown] = useState(-1);
 
-  const closeMobileMenu = () => setToggleMenu(false);
+  const closeMobileMenu = () => setMobileMenu(false);
 
-  const onMouseEnter = () => {
+  const onMouseEnter = (id) => {
     if (window.innerWidth < 960) {
-      setToggleDropdown(false);
+      return;
     } else {
-      setToggleDropdown(true); //enableDropdown
+      setToggleDropdown(id); //enableDropdown
     }
   };
 
   const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setToggleDropdown(false);
-    } else {
-      setToggleDropdown(false);
-    }
+    setToggleDropdown(-1);
   };
 
   return (
@@ -33,16 +29,20 @@ const Navbar2 = () => {
       <Link to="/" className="navbar2-logo">
         Your Logo
       </Link>
-      <div className="navbar2-bars" onClick={() => setToggleMenu(!toggleMenu)}>
-        {toggleMenu ? <FaTimes /> : <FaBars />}
+      <div className="navbar2-bars" onClick={() => setMobileMenu(!mobileMenu)}>
+        {mobileMenu ? (
+          <FaTimes className="FaTimes" />
+        ) : (
+          <FaBars className="FaBars" />
+        )}
       </div>
-      <ul className={`navbar2-menu ${toggleMenu && "active"}`}>
+      <ul className={`navbar2-menu ${mobileMenu && "active"}`}>
         {links.map(({ id, url, text, dropdown }) => {
           return (
             <li
               className="navbar2-menu-item"
               key={id}
-              onMouseEnter={onMouseEnter}
+              onMouseEnter={() => onMouseEnter(id)}
               onMouseLeave={onMouseLeave}
             >
               <Link
@@ -52,10 +52,10 @@ const Navbar2 = () => {
               >
                 {text}
                 {dropdown && <FaCaretDown className="FaCaretDown" />}
-                {dropdown && toggleDropdown ? (
+                {dropdown && id === toggleDropdown ? (
                   <Dropdown
                     dropdown={dropdown}
-                    setToggleMenu={setToggleMenu}
+                    setMobileMenu={setMobileMenu}
                     setToggleDropdown={setToggleDropdown}
                   />
                 ) : (
