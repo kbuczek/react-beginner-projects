@@ -27,6 +27,11 @@ const Home = () => {
             </Link>
           </li> */}
           <li>
+            <Link className="home-link home-button" to="/photo-slider">
+              Photo Slider
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/navbar2">
               Navbar with Dropdown
             </Link>
@@ -34,6 +39,11 @@ const Home = () => {
           <li>
             <Link className="home-link home-button" to="/navbar">
               Navbar
+            </Link>
+          </li>
+          <li>
+            <Link className="home-link home-button" to="/tabs">
+              Tabs
             </Link>
           </li>
           <li>

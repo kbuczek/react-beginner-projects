@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import BirthdayListBootstrap from "./Projects/BirthdayListBootstrap/BirthdayList";
 import Accordion from "./Projects/Accordion/Accordion";
+import PhotoSlider from "./Projects/PhotoSlider/PhotoSlider";
 import Navbar2 from "./Projects/Navbar2/Navbar2";
 import Navbar from "./Projects/Navbar/Navbar";
 import Home from "./Home";
@@ -12,6 +13,7 @@ import ReviewsBootstrap from "./Projects/ReviewsBootstrap/ReviewsBootstrap";
 import TypeRacer from "./Projects/TypeRacer/TypeRacer";
 import MemoryGame from "./Projects/MemoryGame/MemoryGame";
 import Menu from "./Projects/Menu/Menu";
+import Tabs from "./Projects/Tabs/Tabs";
 
 import Link1 from "./Projects/Navbar2/pages/Link1";
 import Link2 from "./Projects/Navbar2/pages/Link2";
@@ -38,11 +40,17 @@ function App() {
           <Route exact path="/memory-game">
             <MemoryGame />
           </Route>
+          <Route exact path="/photo-slider">
+            <PhotoSlider />
+          </Route>
           <Route exact path="/navbar2">
             <Navbar2 />
           </Route>
           <Route exact path="/navbar">
             <Navbar />
+          </Route>
+          <Route exact path="/tabs">
+            <Tabs />
           </Route>
           <Route exact path="/menu">
             <Menu />
