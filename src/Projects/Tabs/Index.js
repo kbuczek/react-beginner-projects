@@ -15,7 +15,7 @@ const Tabs = () => {
   };
 
   useEffect(() => {
-    fetchJobs();
+    // fetchJobs();
   }, []);
 
   console.log(jobs);
