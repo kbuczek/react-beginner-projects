@@ -13,7 +13,7 @@ import ReviewsBootstrap from "./Projects/ReviewsBootstrap/ReviewsBootstrap";
 import TypeRacer from "./Projects/TypeRacer/TypeRacer";
 import MemoryGame from "./Projects/MemoryGame/MemoryGame";
 import Menu from "./Projects/Menu/Menu";
-import Tabs from "./Projects/Tabs/Tabs";
+import Tabs from "./Projects/Tabs/Index";
 
 import Link1 from "./Projects/Navbar2/pages/Link1";
 import Link2 from "./Projects/Navbar2/pages/Link2";
