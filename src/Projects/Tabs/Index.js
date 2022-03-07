@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import "./Index.css";
 
-const url = "http://localhost:8000/tabs";
+const url = "https://course-api.com/react-tabs-project";
 
 const Tabs = () => {
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,7 @@ const Tabs = () => {
   };
 
   useEffect(() => {
-    // fetchJobs();
+    fetchJobs();
   }, []);
 
   console.log(jobs);

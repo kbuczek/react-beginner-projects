@@ -5,7 +5,7 @@ import Accordion from "./Projects/Accordion/Accordion";
 import PhotoSlider from "./Projects/PhotoSlider/PhotoSlider";
 import Navbar2 from "./Projects/Navbar2/Navbar2";
 import Navbar from "./Projects/Navbar/Navbar";
-import Home from "./Home";
+import Home from "./Projects/Home/Home";
 import Error from "./Error";
 import SimpleList from "./Projects/SimpleList/SimpleList";
 import ToursIntro from "./Projects/ToursIntro/ToursIntro";

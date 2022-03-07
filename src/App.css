@@ -1,3 +1,33 @@
+:root {
+  --color-dark: #161616;
+  --color-ocean: #416dea;
+  --color-grass: #3dd28d;
+  --color-snow: #ffffff;
+  --color-salmon: #f32c52;
+  --color-sun: #feee7d;
+  --color-alge: #7999a9;
+  --color-flower: #353866;
+  --color-smoke: #e4e4e4;
+  --color-awhite: #faf9f8;
+
+  --borderRadius: 36px;
+
+  --clr-white: #fff;
+  --clr-black: #222;
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(210, 10%, 80%);
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 450px;
+  --clr-salmon: #f32c52;
+  --clr-blueish: #d4e4ff;
+  --clr-ocean: #416dea;
+}
+
 .App {
   text-align: center;
 }
@@ -20,10 +50,9 @@ body {
   font-size: 0.9rem;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 .container {

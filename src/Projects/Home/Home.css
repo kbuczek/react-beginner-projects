@@ -1,33 +1,36 @@
-:root {
-  --color-dark: #161616;
-  --color-ocean: #416dea;
-  --color-grass: #3dd28d;
-  --color-snow: #ffffff;
-  --color-salmon: #f32c52;
-  --color-sun: #feee7d;
-  --color-alge: #7999a9;
-  --color-flower: #353866;
-  --color-smoke: #e4e4e4;
-  --color-awhite: #faf9f8;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200;300;400;700&display=swap");
 
-  --borderRadius: 36px;
+.home {
+  display: grid;
+  height: 100%;
+  /* grid-template-columns: 1fr; */
+  /* background: #edf2f8; */
+  font-family: "Barlow Semi Condensed", sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
-:root {
-  --clr-white: #fff;
-  --clr-black: #222;
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(210, 10%, 80%);
-  --transition: all 0.3s linear;
-  --spacing: 0.1rem;
-  --radius: 0.25rem;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  --max-width: 1170px;
-  --fixed-width: 450px;
-  --clr-salmon: #f32c52;
-  --clr-blueish: #d4e4ff;
-  --clr-ocean: #416dea;
+.home-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.home-nav-btn {
+  padding: 20px;
+}
+
+.home-jumbotron {
+  margin: 10vw 0 10vw 0;
+}
+
+.home-jumbotron-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #996ed9;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
 .home-container {
@@ -151,4 +154,13 @@
   transition: all 150ms linear;
   padding: 1rem 3.5rem 1rem 3.5rem;
   opacity: 0.9;
+}
+
+.home-small-projects {
+  margin: 5vw 0 5vw 0;
+}
+
+.home-footer {
+  background-color: hsl(219, 29%, 14%);
+  height: 100px;
 }
