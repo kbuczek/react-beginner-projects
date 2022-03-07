@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { GoMarkGithub } from "react-icons/go";
 import "./Home.css";
-
 const Home = () => {
   return (
     <main className="home">
@@ -29,6 +29,9 @@ const Home = () => {
             <strong>React Native</strong> are techonolgies that I'm currently
             trying to master. Read more...{" "}
           </p>
+          <a href="https://github.com/kbuczek">
+            <GoMarkGithub /> My github profile
+          </a>
           <p style={{ opacity: "30%" }}>
             (This site is work in progress. Please, don't get discouraged ;P)
           </p>
