@@ -66,7 +66,7 @@ const Home = () => {
       </section>
 
       <section className="home-small-projects">
-        <h4>Smaller projects that I've created</h4>
+        <h4>Smaller projects that I've created while learning React</h4>
         <ul className="home-container">
           {/* <li>
             <Link className="home-link home-button-red" to="/memory-game">
