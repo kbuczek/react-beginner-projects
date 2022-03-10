@@ -14,6 +14,8 @@ import TypeRacer from "./Projects/TypeRacer/TypeRacer";
 import MemoryGame from "./Projects/MemoryGame/MemoryGame";
 import Menu from "./Projects/Menu/Menu";
 import Tabs from "./Projects/Tabs/Index";
+import GridDragAndDrop from "./Projects/GridDragAndDrop";
+import griddndData from "./Projects/GridDragAndDrop/data/segregators.js";
 
 import Link1 from "./Projects/Navbar2/pages/Link1";
 import Link2 from "./Projects/Navbar2/pages/Link2";
@@ -36,6 +38,9 @@ function App() {
           </Route>
           <Route exact path="/type-racer">
             <TypeRacer />
+          </Route>
+          <Route exact path="/griddnd">
+            <GridDragAndDrop data={griddndData} />
           </Route>
           <Route exact path="/memory-game">
             <MemoryGame />
