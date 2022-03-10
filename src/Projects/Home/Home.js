@@ -1,13 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { GoMarkGithub } from "react-icons/go";
 import "./Home.css";
-
 const Home = () => {
   return (
-    <>
-      <h1 className="home-title">My react beginner projects:</h1>
-      <nav>
-        <ul className="home-container">
+    <main className="home">
+      <nav className="home-navbar">
+        <Link className="home-nav-btn" to="#">
+          Home
+        </Link>
+        <Link className="home-nav-btn" to="#">
+          About
+        </Link>
+        <Link className="home-nav-btn" to="#">
+          Projects
+        </Link>
+        <Link className="home-nav-btn" to="#">
+          Contact
+        </Link>
+      </nav>
+
+      <section className="home-jumbotron">
+        <div className="home-jumbotron-text">
+          <img src="kbuczek.png" className="home-jumbotron-photo" alt="photo" />
+          <h3>Hi, I'm Krzysztof Buczek :)</h3>
+          <p>
+            Aspiring web and app developer. <strong>React</strong> and{" "}
+            <strong>React Native</strong> are techonolgies that I'm currently
+            trying to master. Read more...{" "}
+          </p>
+          <a href="https://github.com/kbuczek">
+            <GoMarkGithub /> My github profile
+          </a>
+          <p style={{ opacity: "30%" }}>
+            (This site is work in progress. Please, don't get discouraged ;P)
+          </p>
+        </div>
+      </section>
+
+      <section className="home-projects">
+        <h2>My projects</h2>
+        <ul>
           <li>
             <Link className="home-link home-button-red" to="/type-racer">
               type racer
@@ -21,11 +54,25 @@ const Home = () => {
           <li>
             <a
               className="home-link home-button-red"
+              href="https://github.com/kbuczek/chairman-mobileapp/blob/main/README.md"
+            >
+              Chairman Fullstack App
+            </a>
+          </li>
+          <li>
+            <a
+              className="home-link home-button-red"
               href="https://hardsoft.netlify.app/"
             >
               HARDSoft webpage
             </a>
           </li>
+        </ul>
+      </section>
+
+      <section className="home-small-projects">
+        <h4>Smaller projects that I've created while learning React</h4>
+        <ul className="home-container">
           {/* <li>
             <Link className="home-link home-button-red" to="/memory-game">
               MEMORY GAME
@@ -84,15 +131,18 @@ const Home = () => {
               Simple List
             </Link>
           </li>
-          <a
-            className="home-github"
-            href="https://github.com/kbuczek/react-beginner-projects"
-          >
-            Source code on github
-          </a>
         </ul>
-      </nav>
-    </>
+      </section>
+      <footer className="home-footer">
+        {" "}
+        <a
+          className="home-github"
+          href="https://github.com/kbuczek/react-beginner-projects"
+        >
+          Source code
+        </a>
+      </footer>
+    </main>
   );
 };
 
