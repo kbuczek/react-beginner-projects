@@ -25,16 +25,13 @@ const Home = () => {
           <img src="kbuczek.png" className="home-jumbotron-photo" alt="photo" />
           <h3>Hi, I'm Krzysztof Buczek :)</h3>
           <p>
-            Aspiring web and app developer. <strong>React</strong> and{" "}
+            Web and app developer. <strong>React</strong> and{" "}
             <strong>React Native</strong> are techonolgies that I'm currently
             trying to master. Read more...{" "}
           </p>
           <a href="https://github.com/kbuczek">
             <GoMarkGithub /> My github profile
           </a>
-          <p style={{ opacity: "30%" }}>
-            (This site is work in progress. Please, don't get discouraged ;P)
-          </p>
         </div>
       </section>
 
