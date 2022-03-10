@@ -44,6 +44,11 @@ const Home = () => {
             </Link>
           </li>
           <li>
+            <Link className="home-link home-button-red" to="/griddnd">
+              Grid drag and drop + resize
+            </Link>
+          </li>
+          <li>
             <a
               className="home-link home-button-red"
               href="https://github.com/kbuczek/chairman-mobileapp/blob/main/README.md"

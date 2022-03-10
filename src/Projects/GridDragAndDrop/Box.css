@@ -1,0 +1,60 @@
+.griddnd-box {
+  background: #fff;
+  display: grid;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 48px 100px 0px;
+  margin: 20px 20px;
+  min-height: 200px;
+  min-width: 200px;
+  grid-template-columns: 1fr 20fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+}
+
+.griddnd-box-current {
+  opacity: 100%;
+  background-color: rgb(97, 97, 97);
+  color: rgb(97, 97, 97);
+}
+
+.griddnd-box-entered {
+  /* background-color: #f3ffef; */
+  border: 5px dashed #56d424;
+  border-radius: 10px;
+}
+
+.griddnd-box-content:hover {
+  cursor: grab;
+}
+
+/* .griddnd-box-up-left:hover,
+.griddnd-box-down-right:hover {
+  cursor: nw-resize;
+} */
+
+.griddnd-box-down-center {
+  opacity: 50%;
+}
+
+/* .griddnd-box-up-center:hover, */
+.griddnd-box-down-center:hover {
+  cursor: pointer;
+}
+
+/* .griddnd-box-up-right:hover,
+.griddnd-box-down-left:hover {
+  cursor: ne-resize;
+} */
+
+.griddnd-box-center-right,
+.griddnd-box-center-left {
+  /* background-color: rgb(255, 217, 0); */
+  opacity: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.griddnd-box-center-left:hover,
+.griddnd-box-center-right:hover {
+  cursor: pointer;
+}
