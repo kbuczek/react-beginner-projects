@@ -39,6 +39,17 @@ p {
   justify-content: start;
 }
 
+.tabs-job-description p {
+  margin-bottom: 10px;
+}
+
+.tabs-job-icon {
+  color: var(--color-ocean);
+  margin-bottom: 10px;
+  height: 40px;
+  margin-right: 20px;
+}
+
 @media (max-width: 768px) {
   .tabs-jobs {
     display: grid;
