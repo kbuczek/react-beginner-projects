@@ -6,7 +6,7 @@ const Button = ({ link, text }) => {
   return (
     <>
       <Link to={link}>
-        <button className="button">{text}</button>
+        <button className="navbar2-button">{text}</button>
       </Link>
     </>
   );

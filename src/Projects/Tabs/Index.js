@@ -20,8 +20,6 @@ const Tabs = () => {
     fetchJobs();
   }, []);
 
-  console.log(jobs);
-
   if (loading) {
     return (
       <section className="tabs-loading">
@@ -32,11 +30,26 @@ const Tabs = () => {
 
   const { company, dates, duties, title } = jobs[value];
   return (
-    <section className="tabs-section">
+    <section className="tabs">
       <div className="tabs-title">
         <h2>My work experience</h2>
       </div>
-      <div className="tabs-jobs-center">
+      <div className="tabs-jobs container">
+        <div className="tabs-jobs-buttons">
+          {jobs.map((item, index) => {
+            return (
+              <button
+                key={item.id}
+                className={`tabs-jobs-button ${
+                  index === value && "tabs-jobs-button-active"
+                }`}
+                onClick={() => setValue(index)}
+              >
+                {item.company}
+              </button>
+            );
+          })}
+        </div>
         <article className="tabs-jobs-info">
           <h3>{title}</h3>
           <h4>{company}</h4>

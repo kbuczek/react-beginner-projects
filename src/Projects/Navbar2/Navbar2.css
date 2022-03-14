@@ -145,7 +145,7 @@
     transition: 250ms;
   }
 
-  button {
+  .navbar2-button {
     display: none;
   }
 

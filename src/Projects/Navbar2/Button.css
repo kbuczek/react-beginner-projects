@@ -2,7 +2,7 @@
   --primary: #1888ff;
 }
 
-.button {
+.navbar2-button {
   padding: 8px 20px;
   border-radius: 4px;
   outline: none;
@@ -14,7 +14,7 @@
   background-color: var(--primary);
 }
 
-.button:hover {
+.navbar2-button:hover {
   padding: 6px 18px;
   transition: all 0.15s ease-out;
   background-color: transparent;
