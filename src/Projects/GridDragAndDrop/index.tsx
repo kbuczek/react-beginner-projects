@@ -2,9 +2,13 @@ import React, { useEffect, useState, useRef } from "react";
 import Box, { BoxProps } from "./Box";
 import "./index.css";
 
-const GridDnd = ({ data }) => {
+interface GridDnd {
+  data: { [key: string]: any }[];
+}
+
+const GridDnd: React.FunctionComponent<GridDnd> = ({ data }) => {
   const [columns, setColumns] = useState(5);
-  const [boxesPositions, setBoxesPositions] = useState([]);
+  const [boxesPositions, setBoxesPositions] = useState<number[]>([]);
   const [gridDndStyle, setGridDndStyle] = useState({
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
   });
@@ -13,7 +17,7 @@ const GridDnd = ({ data }) => {
   const [dataValuesMap, setDataValuesMap] = useState(new Map());
 
   //useRef stays constant between rerenders
-  const currentDragBox = useRef(-1);
+  const currentDragBox = useRef<number>(-1);
 
   useEffect(() => {
     initializeBoxesPositions();

@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./Box.css";
 
-const Box = (props) => {
+export interface BoxProps {
+  id: number;
+  // id_klienta: number;
+  nazwa: string;
+  rok: number;
+}
+
+const Box = (props: any) => {
   const [gridColumnSpan, setGridColumnSpan] = useState(1);
   const [gridRowSpan, setGridRowSpan] = useState(1);
   const [currentBoxCss, setCurrentBoxCss] = useState(false); //black background css
   const [boxStyle, setBoxStyle] = useState({});
   const [mouseEntered, setMouseEntered] = useState(0);
-  const colors = [
+  const colors: string[] = [
     "pink",
     "peachpuff",
     "lightyellow",
@@ -35,13 +42,13 @@ const Box = (props) => {
     }
   }, [props.dragging]);
 
-  const handleDragStart = (e) => {
+  const handleDragStart = (e: any) => {
     console.log("drag start", props.id);
     props.currentDragBox.current = props.id;
     props.setDragging(true);
   };
 
-  const handleDragEnd = (e) => {
+  const handleDragEnd = (e: any) => {
     console.log("drag end", props.id);
     // if statement prevents changing positions when user drags item back to its original place
     if (props.enteredBoxId !== props.currentDragBox.current) {
@@ -53,7 +60,7 @@ const Box = (props) => {
     setMouseEntered(0);
   };
 
-  const handleDragOver = (e) => {
+  const handleDragOver = (e: any) => {
     if (e.preventDefault) {
       e.preventDefault();
     }
@@ -62,7 +69,7 @@ const Box = (props) => {
   };
 
   //triggered every time the mouse stops
-  const handleDragEnter = (e) => {
+  const handleDragEnter = (e: any) => {
     // Don't trigger when entering the current dragged box
     e.preventDefault();
     console.log("dragenter", props.id);
@@ -73,7 +80,7 @@ const Box = (props) => {
     }
   };
 
-  const handleDragLeave = (e) => {
+  const handleDragLeave = (e: any) => {
     let newMouseEntered = mouseEntered - 1;
     setMouseEntered(newMouseEntered);
     // every child in DOM triggers dragleave in parent
