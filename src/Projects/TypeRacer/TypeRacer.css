@@ -1,3 +1,7 @@
+.typeracer {
+  text-align: center;
+}
+
 .typeracer-main {
   display: block;
   position: relative;
@@ -81,6 +85,7 @@
   /* border: 1px solid #888; */
   border-radius: 0.5rem;
   width: 50%;
+  text-align: center;
 }
 
 .typeracer-modal-title {

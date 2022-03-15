@@ -27,9 +27,15 @@
   color: green;
 }
 
-.tabs-jobs-info h3,
-h4,
-p {
+.tabs-jobs-info > h3 {
+  text-align: start;
+}
+
+.tabs-jobs-info > h4 {
+  text-align: start;
+}
+
+.tabs-jobs-info > p {
   text-align: start;
 }
 
