@@ -8,12 +8,17 @@
   min-width: 200px;
   grid-template-columns: 1fr 20fr 1fr;
   grid-template-rows: 1fr 5fr 1fr;
+  font-size: 1rem;
 }
+
+/* .griddnd-box * { */
+/* pointer-events: none; */
+/* } */
 
 .griddnd-box-current {
   opacity: 100%;
-  background-color: rgb(97, 97, 97);
-  color: rgb(97, 97, 97);
+  background-color: rgb(97, 97, 97) !important;
+  color: rgb(97, 97, 97) !important;
 }
 
 .griddnd-box-entered {
@@ -57,4 +62,32 @@
 .griddnd-box-center-left:hover,
 .griddnd-box-center-right:hover {
   cursor: pointer;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.peachpuff {
+  background-color: peachpuff;
+}
+
+.lightyellow {
+  background-color: lightyellow;
+}
+
+.palegreen {
+  background-color: palegreen;
+}
+
+.lightcyan {
+  background-color: lighcyan;
+}
+
+.powderblue {
+  background-color: powderblue;
+}
+
+.thistle {
+  background-color: thistle;
 }

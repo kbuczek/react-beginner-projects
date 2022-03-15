@@ -15,12 +15,9 @@ const GridDnd: React.FunctionComponent<GridDnd> = ({ data }) => {
   const [dragging, setDragging] = useState(false);
   const [enteredBoxId, setEnteredBoxId] = useState(-1);
   const [dataValuesMap, setDataValuesMap] = useState(new Map());
-  // const dataValuesMap = new Map();
-  // const [dataValues, setDataValues] = useState();
 
   //useRef stays constant between rerenders
   const currentDragBox = useRef<number>(-1);
-  // const dragNode = useRef<number>();
 
   useEffect(() => {
     initializeBoxesPositions();
@@ -47,12 +44,16 @@ const GridDnd: React.FunctionComponent<GridDnd> = ({ data }) => {
   };
 
   const changeBoxPosition = () => {
-    console.log("changeBox currentDragBox", currentDragBox.current);
-    console.log("changeBox enteredBoxId", enteredBoxId);
-    const indexCurrentDragBox = boxesPositions.indexOf(currentDragBox.current);
-    const indexEnteredBox = boxesPositions.indexOf(enteredBoxId);
-    boxesPositions.splice(indexEnteredBox, 1, currentDragBox.current);
-    boxesPositions.splice(indexCurrentDragBox, 1, enteredBoxId);
+    if (enteredBoxId > 0) {
+      console.log("changeBox currentDragBox", currentDragBox.current);
+      console.log("changeBox enteredBoxId", enteredBoxId);
+      const indexCurrentDragBox = boxesPositions.indexOf(
+        currentDragBox.current
+      );
+      const indexEnteredBox = boxesPositions.indexOf(enteredBoxId);
+      boxesPositions.splice(indexEnteredBox, 1, currentDragBox.current);
+      boxesPositions.splice(indexCurrentDragBox, 1, enteredBoxId);
+    }
   };
 
   return (
@@ -91,6 +92,7 @@ const GridDnd: React.FunctionComponent<GridDnd> = ({ data }) => {
               setDragging={setDragging}
               currentDragBox={currentDragBox}
               changeBoxPosition={changeBoxPosition}
+              enteredBoxId={enteredBoxId}
               setEnteredBoxId={setEnteredBoxId}
               id={boxId}
             >
