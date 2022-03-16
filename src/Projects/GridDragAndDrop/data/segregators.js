@@ -8,25 +8,25 @@ const data = [
   {
     id: 3,
     id_klienta: 9,
-    nazwa: "Wyciąg bankowe",
+    nazwa: "Random title",
     rok: 2020,
   },
   {
     id: 4,
     id_klienta: 9,
-    nazwa: "Faktury VAT",
+    nazwa: "Dokumenty",
     rok: 2020,
   },
   {
     id: 5,
     id_klienta: 10,
-    nazwa: "Faktury 10",
+    nazwa: "Zakupy",
     rok: 2019,
   },
   {
     id: 6,
     id_klienta: 11,
-    nazwa: "Faktury 11",
+    nazwa: "Rower",
     rok: 2017,
   },
   {
@@ -68,7 +68,7 @@ const data = [
   {
     id: 39,
     id_klienta: 9,
-    nazwa: "Płyn z Orlenu",
+    nazwa: "Zakupy",
     rok: 2020,
   },
   {
@@ -80,7 +80,7 @@ const data = [
   {
     id: 41,
     id_klienta: 9,
-    nazwa: "Wycieki VAT",
+    nazwa: "React",
     rok: 2020,
   },
   {
