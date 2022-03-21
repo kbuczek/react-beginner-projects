@@ -1,0 +1,17 @@
+.notification {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  min-height: 85px;
+  background-color: #fff;
+  border-radius: 5px;
+  border-left: 6px solid red;
+  box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
+}
+
+.notification-text > div {
+  justify-content: start !important;
+  align-items: start !important;
+}
