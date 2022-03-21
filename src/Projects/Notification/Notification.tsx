@@ -4,11 +4,13 @@ import "./notification.css";
 interface Notification {
   title: string;
   message: string;
+  type: string;
 }
 
 const Notification: React.FunctionComponent<Notification> = ({
   title,
   message,
+  type = "default",
 }) => {
   return (
     <div className="notification">
