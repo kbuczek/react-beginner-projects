@@ -1,27 +1,69 @@
 .notification {
+  position: fixed;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  align-items: center;
-  justify-content: center;
-  max-width: 450px;
+  grid-template-columns: 1fr 4fr;
+  width: 350px;
   min-height: 85px;
   background-color: #fff;
   border-radius: 5px;
-  border-left: 6px solid red;
-  box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
-  position: relative;
+  box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.4);
+  margin: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: saturate(180%) blur(10px);
 }
 
-/* .notification-text > div {
-  justify-content: start !important;
-  align-items: start !important;
-} */
+/* starts with "top-" */
+.notification[data-position^="top-"] {
+  top: 0;
+}
+
+/* ends with "-right" */
+.notification[data-position$="-right"] {
+  right: 0;
+}
+
+.notification[data-position^="bottom-"] {
+  bottom: 0;
+}
+
+.notification[data-position^="left-"] {
+  left: 0;
+}
+
+.notification-icon {
+  margin-right: 10px;
+  align-self: center;
+}
+
+.notification-text {
+  margin-top: 5px;
+}
+
+.notification-text > div {
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.notification-text-title {
+  font-weight: 800;
+}
+
+.notification-text-message {
+  padding-right: 14px;
+  text-align: justify;
+  margin-bottom: 5px;
+}
 
 .notification-close {
   padding: 10px;
   position: absolute;
-  top: 5px;
-  right: 10px;
+  display: flex;
+  justify-content: center;
+  top: 8px;
+  right: 9px;
 }
 
 .notification-close:hover {
