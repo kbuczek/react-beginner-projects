@@ -9,20 +9,18 @@ import {
 import "./notification.css";
 
 interface Notification {
-  title: string;
-  message: string;
-  type: string;
-  dataPosition: string;
+  title?: string;
+  message?: string;
+  type?: string;
 }
 
 const Notification: React.FunctionComponent<Notification> = ({
   title = "",
   message = "",
   type = "info",
-  dataPosition = "top-right",
 }) => {
   return (
-    <div className="notification" data-position={dataPosition}>
+    <div className="notification">
       <div className="notification-icon">
         <IoAlertCircle color="red" size={40} />
       </div>

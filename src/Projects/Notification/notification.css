@@ -1,5 +1,4 @@
 .notification {
-  position: fixed;
   display: grid;
   grid-template-columns: 1fr 4fr;
   width: 350px;
@@ -7,28 +6,10 @@
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.4);
-  margin: 10px;
+  /* margin: 10px; */
   padding: 10px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: saturate(180%) blur(10px);
-}
-
-/* starts with "top-" */
-.notification[data-position^="top-"] {
-  top: 0;
-}
-
-/* ends with "-right" */
-.notification[data-position$="-right"] {
-  right: 0;
-}
-
-.notification[data-position^="bottom-"] {
-  bottom: 0;
-}
-
-.notification[data-position^="left-"] {
-  left: 0;
 }
 
 .notification-icon {
@@ -42,23 +23,25 @@
 
 .notification-text > div {
   font-size: 1rem;
-  display: flex;
+  /* display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-start; */
 }
 
 .notification-text-title {
   font-weight: 800;
+  padding-right: 40px;
+  text-align: left;
 }
 
 .notification-text-message {
-  padding-right: 14px;
+  padding-right: 40px;
   text-align: justify;
   margin-bottom: 5px;
 }
 
 .notification-close {
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
   position: absolute;
   display: flex;
   justify-content: center;
