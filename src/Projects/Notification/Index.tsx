@@ -11,7 +11,7 @@ const Index = () => {
 
   const handleClickInfo = () => {
     setNewNotification({
-      title: "Title",
+      title: "Title Info",
       message: "This is my very long message",
       type: "info",
       timeShown: 3,
@@ -20,7 +20,7 @@ const Index = () => {
 
   const handleClickSuccess = () => {
     setNewNotification({
-      title: "Title",
+      title: "Title Success",
       message: "This is my very long message",
       type: "success",
       timeShown: 3,
