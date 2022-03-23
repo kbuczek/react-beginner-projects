@@ -19,7 +19,7 @@ const Notification: React.FunctionComponent<Notification> = ({
         <div className="notification-text-title">{title}</div>
         <div className="notification-text-message">{message}</div>
       </div>
-      <div className="notification-close">X</div>
+      <div className="notification-close" >X</div>
     </div>
   );
 };
