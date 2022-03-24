@@ -30,6 +30,7 @@ const Notification: React.FunctionComponent<Notification> = ({
   const [time, setTime] = useState(timeShown * 1000);
   const [cssShowClass, setCssShowClass] = useState<boolean>(false);
   const [cssTimeBarClass, setCssTimeBarClass] = useState<boolean>(false);
+  // let timeBarInterval = {};
 
   useEffect(() => {
     showAnimation();
@@ -94,6 +95,7 @@ const Notification: React.FunctionComponent<Notification> = ({
       }`}
       onClick={() => {
         setCssShowClass(false);
+        // clearInterval(timeBarIn)
         setTimeout(() => {
           deleteNotification(id);
         }, 100);
