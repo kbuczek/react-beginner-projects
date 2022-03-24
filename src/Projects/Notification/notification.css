@@ -21,6 +21,10 @@
   transform: translateX(-110%);
 }
 
+.notificationContainer[data-position$="-center"] .notification {
+  transform: translateY(-110%);
+}
+
 .notificationContainer .notification.show {
   transform: translateX(0);
 }

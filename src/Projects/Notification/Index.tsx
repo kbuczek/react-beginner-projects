@@ -28,11 +28,11 @@ const Index = () => {
   };
 
   return (
-    <main>
+    <main style={{ marginTop: "400px" }}>
       <button onClick={handleClickInfo}>Add info notification</button>
       <button onClick={handleClickSuccess}>Add success notification</button>
       <NotificationContainer
-        position="top-left"
+        position="top-right"
         newNotification={newNotification}
       />
     </main>
