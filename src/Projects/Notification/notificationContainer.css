@@ -1,0 +1,30 @@
+.notificationContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 15px;
+}
+
+/* starts with "top-" */
+.notificationContainer[data-position^="top-"] {
+  top: 0;
+}
+
+/* ends with "-right" */
+.notificationContainer[data-position$="-right"] {
+  right: 0;
+}
+
+.notificationContainer[data-position^="bottom-"] {
+  bottom: 0;
+}
+
+.notificationContainer[data-position^="left-"] {
+  left: 0;
+}
+
+.notificationContainer[data-position$="-center"] {
+  left: 50%;
+  transform: translateX(-50%);
+}

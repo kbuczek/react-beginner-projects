@@ -16,7 +16,7 @@ import Menu from "./Projects/Menu/Menu";
 import Tabs from "./Projects/Tabs/Index";
 import GridDragAndDrop from "./Projects/GridDragAndDrop";
 import griddndData from "./Projects/GridDragAndDrop/data/segregators.js";
-import Notification from "./Projects/Notification/Notification";
+import Notification from "./Projects/Notification/Index.tsx";
 
 import Link1 from "./Projects/Navbar2/pages/Link1";
 import Link2 from "./Projects/Navbar2/pages/Link2";
@@ -44,10 +44,7 @@ function App() {
             <GridDragAndDrop data={griddndData} />
           </Route>
           <Route exact path="/notification">
-            <Notification
-              title="Title"
-              message="Sample message of the notification"
-            />
+            <Notification />
           </Route>
           <Route exact path="/memory-game">
             <MemoryGame />
