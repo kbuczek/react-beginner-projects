@@ -9,12 +9,19 @@ interface NotificationContainer {
     message: string;
     type?: string;
     timeShown?: number;
+    displayTimeBar?: boolean;
   };
 }
 
 const NotificationContainer = ({
   position = "top-right",
-  newNotification = { title: "", message: "", type: "", timeShown: 0 },
+  newNotification = {
+    title: "",
+    message: "",
+    type: "",
+    timeShown: 0,
+    displayTimeBar: true,
+  },
 }) => {
   interface NLInterface {
     id: number;
@@ -22,6 +29,7 @@ const NotificationContainer = ({
     message: string;
     type: string;
     timeShown: number;
+    displayTimeBar: boolean;
   }
   const [notificationList, setNotificationList] = useState<NLInterface[]>([]);
 
@@ -40,6 +48,7 @@ const NotificationContainer = ({
           message: newNotification.message,
           type: newNotification.type,
           timeShown: newNotification.timeShown,
+          displayTimeBar: newNotification.displayTimeBar,
         },
         ...prev,
       ]);
@@ -55,19 +64,22 @@ const NotificationContainer = ({
 
   return (
     <div className="notificationContainer" data-position={position}>
-      {notificationList?.map(({ id, title, message, type, timeShown }) => {
-        return (
-          <Notification
-            key={id}
-            id={id}
-            title={title}
-            message={message}
-            type={type}
-            timeShown={timeShown}
-            deleteNotification={deleteNotification}
-          />
-        );
-      })}
+      {notificationList?.map(
+        ({ id, title, message, type, timeShown, displayTimeBar }) => {
+          return (
+            <Notification
+              key={id}
+              id={id}
+              title={title}
+              message={message}
+              type={type}
+              timeShown={timeShown}
+              displayTimeBar={displayTimeBar}
+              deleteNotification={deleteNotification}
+            />
+          );
+        }
+      )}
     </div>
   );
 };

@@ -1,3 +1,8 @@
+/* :root {
+  --timebar: 19;
+  --timebar-color: black;
+} */
+
 .notification {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -10,7 +15,8 @@
   padding: 10px;
   background: rgba(255, 255, 255, 0.83);
   backdrop-filter: saturate(180%) blur(10px);
-  transition: transform 250ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+  overflow: hidden;
 }
 
 .notificationContainer[data-position$="-right"] .notification {
@@ -27,6 +33,18 @@
 
 .notificationContainer .notification.show {
   transform: translateX(0);
+}
+
+.notification.timebar::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  /* css variable */
+  width: calc(100% * var(--timebar));
+  background-color: var(--timebar-color);
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .notification:hover {

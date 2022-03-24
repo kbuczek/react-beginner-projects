@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, CSSProperties } from "react";
 import {
   IoInformationCircle,
   IoCheckmarkCircle,
@@ -14,6 +14,7 @@ interface Notification {
   message?: string;
   type?: string;
   timeShown?: number;
+  displayTimeBar?: boolean;
   deleteNotification: Function;
 }
 
@@ -23,18 +24,58 @@ const Notification: React.FunctionComponent<Notification> = ({
   message = "",
   type = "info",
   timeShown = 3,
+  displayTimeBar = true,
   deleteNotification,
 }) => {
-  const [time, setTime] = useState(timeShown);
-  const [css, setCss] = useState<string>("");
+  const [time, setTime] = useState(timeShown * 1000);
+  const [cssShowClass, setCssShowClass] = useState<boolean>(false);
+  const [cssTimeBarClass, setCssTimeBarClass] = useState<boolean>(false);
 
   useEffect(() => {
-    setCss("show");
-    setTimeout(() => {
-      setCss("");
-      deleteNotification(id);
-    }, timeShown * 1000);
+    showAnimation();
+    timeBarAnimation();
+    setCssTimeBarClass(displayTimeBar);
+    // const timebarFromCss = getComputedStyle(
+    //   document.documentElement
+    // ).getPropertyValue("--timebar");
+    // console.log(timebarFromCss);
+
+    document.documentElement.style.setProperty("--timebar-color", "blue");
   }, []);
+
+  const showAnimation = () => {
+    setTimeout(() => {
+      setCssShowClass(true);
+    }, 100);
+    setTimeout(() => {
+      setCssShowClass(false);
+      setTimeout(() => {
+        deleteNotification(id);
+      }, 150);
+    }, timeShown * 1000);
+  };
+
+  const timeBarAnimation = () => {
+    if (displayTimeBar) {
+      // document.documentElement.style.setProperty("--timebar", "1");
+      let currentTime = timeShown * 1000;
+      const fullTime = timeShown * 1000;
+      const timeBarInterval = setInterval(() => {
+        let progress = currentTime / fullTime;
+
+        console.log("progress", progress);
+        document.documentElement.style.setProperty(
+          "--timebar",
+          progress.toString()
+        );
+        currentTime -= 10;
+
+        if (progress < 0) {
+          clearInterval(timeBarInterval);
+        }
+      }, 10);
+    }
+  };
 
   const displayIcon = () => {
     console.log(type);
@@ -48,9 +89,14 @@ const Notification: React.FunctionComponent<Notification> = ({
 
   return (
     <div
-      className={`notification ${css}`}
+      className={`notification ${cssShowClass && "show"} ${
+        cssTimeBarClass && "timebar"
+      }`}
       onClick={() => {
-        deleteNotification(id);
+        setCssShowClass(false);
+        setTimeout(() => {
+          deleteNotification(id);
+        }, 100);
       }}
     >
       <div className="notification-icon">{displayIcon()}</div>

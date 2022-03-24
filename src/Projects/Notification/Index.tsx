@@ -7,6 +7,7 @@ const Index = () => {
     message: "",
     type: "",
     timeShown: 1,
+    displayTimeBar: true,
   });
 
   const handleClickInfo = () => {
@@ -14,7 +15,8 @@ const Index = () => {
       title: "Title Info",
       message: "This is my very long message",
       type: "info",
-      timeShown: 2,
+      timeShown: 20,
+      displayTimeBar: true,
     });
   };
 
@@ -24,6 +26,7 @@ const Index = () => {
       message: "This is my very long message",
       type: "success",
       timeShown: 2,
+      displayTimeBar: true,
     });
   };
 
