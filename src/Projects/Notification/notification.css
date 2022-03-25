@@ -35,18 +35,6 @@
   transform: translateX(0);
 }
 
-.notification.timebar::before {
-  content: "";
-  position: absolute;
-  height: 4px;
-  /* css variable */
-  width: calc(100% * var(--timebar));
-  background-color: var(--timebar-color);
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 .notification:hover {
   cursor: pointer;
   background: rgb(255, 255, 255);
@@ -87,4 +75,16 @@
   justify-content: center;
   top: 8px;
   right: 9px;
+}
+
+.notification-timebar {
+  content: "";
+  position: absolute;
+  height: 4px;
+  /* css variable */
+  /* width: calc(100% * var(--timebar)); */
+  /* background-color: red; */
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

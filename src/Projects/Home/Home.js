@@ -44,6 +44,11 @@ const Home = () => {
             </Link>
           </li>
           <li>
+            <Link className="home-link home-button-red" to="/notification">
+              Notifications
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button-red" to="/griddnd">
               Grid drag and drop + resize
             </Link>

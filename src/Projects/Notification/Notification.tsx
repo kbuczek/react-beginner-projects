@@ -1,4 +1,5 @@
-import React, { useState, useEffect, CSSProperties } from "react";
+import React, { useState, useEffect } from "react";
+import { memo } from "react";
 import {
   IoInformationCircle,
   IoCheckmarkCircle,
@@ -28,21 +29,44 @@ const Notification: React.FunctionComponent<Notification> = ({
   deleteNotification,
 }) => {
   const [time, setTime] = useState(timeShown * 1000);
+  const [timeBarColor, setTimeBarColor] = useState("black");
+  const [timeBarIcon, setTimeBarIcon] = useState(
+    <IoInformationCircle color="blue" size={40} />
+  );
   const [cssShowClass, setCssShowClass] = useState<boolean>(false);
-  const [cssTimeBarClass, setCssTimeBarClass] = useState<boolean>(false);
-  // let timeBarInterval = {};
+  const [cssTimeBarProgress, setCssTimeBarProgress] = useState({});
+  let timeBarInterval = {};
 
   useEffect(() => {
+    chooseTimeBarType();
     showAnimation();
     timeBarAnimation();
-    setCssTimeBarClass(displayTimeBar);
-    // const timebarFromCss = getComputedStyle(
-    //   document.documentElement
-    // ).getPropertyValue("--timebar");
-    // console.log(timebarFromCss);
-
-    document.documentElement.style.setProperty("--timebar-color", "blue");
   }, []);
+
+  // useEffect(() => {
+
+  // }, [timeBarColor]);
+
+  const chooseTimeBarType = () => {
+    switch (type) {
+      case "info":
+        setTimeBarColor("blue");
+        setTimeBarIcon(<IoInformationCircle color={"blue"} size={40} />);
+        break;
+      case "success":
+        setTimeBarColor("green");
+        setTimeBarIcon(<IoCheckmarkCircle color={"green"} size={40} />);
+        break;
+      case "warning":
+        setTimeBarColor("yellow");
+        setTimeBarIcon(<IoAlertCircle color={"yellow"} size={40} />);
+        break;
+      case "danger":
+        setTimeBarColor("red");
+        setTimeBarIcon(<IoCloseCircle color={"red"} size={40} />);
+        break;
+    }
+  };
 
   const showAnimation = () => {
     setTimeout(() => {
@@ -58,17 +82,17 @@ const Notification: React.FunctionComponent<Notification> = ({
 
   const timeBarAnimation = () => {
     if (displayTimeBar) {
-      // document.documentElement.style.setProperty("--timebar", "1");
       let currentTime = timeShown * 1000;
       const fullTime = timeShown * 1000;
       const timeBarInterval = setInterval(() => {
         let progress = currentTime / fullTime;
 
         console.log("progress", progress);
-        document.documentElement.style.setProperty(
-          "--timebar",
-          progress.toString()
-        );
+        console.log("color", timeBarColor);
+        setCssTimeBarProgress({
+          width: `calc(100% * ${progress})`,
+          backgroundColor: `${timeBarColor}`,
+        });
         currentTime -= 10;
 
         if (progress < 0) {
@@ -78,21 +102,9 @@ const Notification: React.FunctionComponent<Notification> = ({
     }
   };
 
-  const displayIcon = () => {
-    console.log(type);
-    switch (type) {
-      case "info":
-        return <IoInformationCircle color="blue" size={40} />;
-      case "success":
-        return <IoCheckmarkCircle color="green" size={40} />;
-    }
-  };
-
   return (
     <div
-      className={`notification ${cssShowClass && "show"} ${
-        cssTimeBarClass && "timebar"
-      }`}
+      className={`notification ${cssShowClass && "show"}`}
       onClick={() => {
         setCssShowClass(false);
         // clearInterval(timeBarIn)
@@ -101,7 +113,7 @@ const Notification: React.FunctionComponent<Notification> = ({
         }, 100);
       }}
     >
-      <div className="notification-icon">{displayIcon()}</div>
+      <div className="notification-icon">{timeBarIcon}</div>
       <div className="notification-text">
         <div className="notification-text-title">{title}</div>
         <div className="notification-text-message">{message}</div>
@@ -109,8 +121,9 @@ const Notification: React.FunctionComponent<Notification> = ({
       <div className="notification-close">
         <IoClose size={20} />
       </div>
+      <div className="notification-timebar" style={cssTimeBarProgress}></div>
     </div>
   );
 };
 
-export default Notification;
+export default memo(Notification);

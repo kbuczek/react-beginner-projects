@@ -9,6 +9,7 @@ const Index = () => {
     timeShown: 1,
     displayTimeBar: true,
   });
+  const [notifContPosition, setNotifContPosition] = useState("top-right");
 
   const handleClickInfo = () => {
     setNewNotification({
@@ -30,12 +31,58 @@ const Index = () => {
     });
   };
 
+  const handleClickWarning = () => {
+    setNewNotification({
+      title: "Title Warning",
+      message: "This is my very long message",
+      type: "warning",
+      timeShown: 2,
+      displayTimeBar: true,
+    });
+  };
+
+  const handleClickDanger = () => {
+    setNewNotification({
+      title: "Title Danger",
+      message: "This is my very long message",
+      type: "danger",
+      timeShown: 2,
+      displayTimeBar: true,
+    });
+  };
+
   return (
-    <main style={{ marginTop: "400px" }}>
-      <button onClick={handleClickInfo}>Add info notification</button>
-      <button onClick={handleClickSuccess}>Add success notification</button>
+    <main>
+      <div style={{ marginTop: "400px" }}>
+        <button onClick={handleClickInfo}>Add info notification</button>
+        <button onClick={handleClickSuccess}>Add success notification</button>
+        <button onClick={handleClickWarning}>Add warning notification</button>
+        <button onClick={handleClickDanger}>Add danger notification</button>
+      </div>
+
+      <div style={{ marginTop: "50px" }}>
+        <button onClick={() => setNotifContPosition("top-right")}>
+          top right
+        </button>
+        <button onClick={() => setNotifContPosition("top-center")}>
+          top center
+        </button>
+        <button onClick={() => setNotifContPosition("top-left")}>
+          top left
+        </button>
+        <button onClick={() => setNotifContPosition("bottom-right")}>
+          bottom right
+        </button>
+        <button onClick={() => setNotifContPosition("bottom-center")}>
+          bottom center
+        </button>
+        <button onClick={() => setNotifContPosition("bottom-left")}>
+          bottom left
+        </button>
+      </div>
+
       <NotificationContainer
-        position="top-right"
+        position={notifContPosition}
         newNotification={newNotification}
       />
     </main>

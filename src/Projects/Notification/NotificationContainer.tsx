@@ -30,12 +30,25 @@ const NotificationContainer = ({
     type: string;
     timeShown: number;
     displayTimeBar: boolean;
+    hidden: boolean;
   }
   const [notificationList, setNotificationList] = useState<NLInterface[]>([]);
+  const [hiddenNotificationsLength, setHiddenNotificationsLength] = useState(0);
 
   useEffect(() => {
     addNotification();
   }, [newNotification]);
+
+  useEffect(() => {
+    console.log(hiddenNotificationsLength);
+    console.log(notificationList.length);
+
+    if (notificationList.length === hiddenNotificationsLength) {
+      console.log("DELETING TABLE");
+      setNotificationList([]);
+      setHiddenNotificationsLength(0);
+    }
+  }, [hiddenNotificationsLength]);
 
   const addNotification = () => {
     let notifListLength = notificationList.length;
@@ -49,6 +62,7 @@ const NotificationContainer = ({
           type: newNotification.type,
           timeShown: newNotification.timeShown,
           displayTimeBar: newNotification.displayTimeBar,
+          hidden: false,
         },
         ...prev,
       ]);
@@ -56,16 +70,22 @@ const NotificationContainer = ({
   };
 
   const deleteNotification = (id: number) => {
-    const newNotificationList = notificationList.filter(
-      (item) => item.id !== id
-    );
-    setNotificationList(newNotificationList);
+    // const newNotificationList = notificationList.filter(
+    //   (item) => item.id !== id
+    // );
+    // setNotificationList(newNotificationList);
+    setHiddenNotificationsLength((prev) => prev + 1);
+    const index = notificationList.findIndex((x) => x.id === id);
+    notificationList[index].hidden = true;
   };
 
   return (
     <div className="notificationContainer" data-position={position}>
       {notificationList?.map(
-        ({ id, title, message, type, timeShown, displayTimeBar }) => {
+        ({ id, title, message, type, timeShown, displayTimeBar, hidden }) => {
+          if (hidden) {
+            return null;
+          }
           return (
             <Notification
               key={id}
@@ -81,6 +101,26 @@ const NotificationContainer = ({
         }
       )}
     </div>
+    // <>
+    //   {notificationList?.map(
+    //     ({ id, title, message, type, timeShown, displayTimeBar }) => {
+    //       return (
+    //         <div className="notificationContainer" data-position={position}>
+    //           <Notification
+    //             key={id}
+    //             id={id}
+    //             title={title}
+    //             message={message}
+    //             type={type}
+    //             timeShown={timeShown}
+    //             displayTimeBar={displayTimeBar}
+    //             deleteNotification={deleteNotification}
+    //           />
+    //         </div>
+    //       );
+    //     }
+    //   )}
+    // </>
   );
 };
 
