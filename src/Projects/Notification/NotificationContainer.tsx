@@ -75,6 +75,7 @@ const NotificationContainer = ({
     // );
     // setNotificationList(newNotificationList);
     setHiddenNotificationsLength((prev) => prev + 1);
+    console.log("ADDD");
     const index = notificationList.findIndex((x) => x.id === id);
     notificationList[index].hidden = true;
   };

@@ -29,39 +29,57 @@ const Notification: React.FunctionComponent<Notification> = ({
   deleteNotification,
 }) => {
   const [time, setTime] = useState(timeShown * 1000);
-  const [timeBarColor, setTimeBarColor] = useState("black");
+  const [timeBarColor, setTimeBarColor] = useState("black"); //this is useless, remove it later
   const [timeBarIcon, setTimeBarIcon] = useState(
     <IoInformationCircle color="blue" size={40} />
   );
   const [cssShowClass, setCssShowClass] = useState<boolean>(false);
   const [cssTimeBarProgress, setCssTimeBarProgress] = useState({});
-  let timeBarInterval = {};
+  // const [timeBarInterval, setTimeBarInterval] = useState({});
+  let timeBarInterval: ReturnType<typeof setInterval>;
 
   useEffect(() => {
     chooseTimeBarType();
-    showAnimation();
-    timeBarAnimation();
   }, []);
 
-  // useEffect(() => {
-
-  // }, [timeBarColor]);
+  useEffect(() => {
+    if (Object.keys(cssTimeBarProgress).length !== 0) {
+      showAnimation();
+      timeBarAnimation();
+    }
+  }, [timeBarColor]);
 
   const chooseTimeBarType = () => {
     switch (type) {
       case "info":
         setTimeBarColor("blue");
+        setCssTimeBarProgress({
+          ...cssTimeBarProgress,
+          backgroundColor: "blue",
+        });
         setTimeBarIcon(<IoInformationCircle color={"blue"} size={40} />);
         break;
       case "success":
+        setCssTimeBarProgress({
+          ...cssTimeBarProgress,
+          backgroundColor: "green",
+        });
         setTimeBarColor("green");
         setTimeBarIcon(<IoCheckmarkCircle color={"green"} size={40} />);
         break;
       case "warning":
+        setCssTimeBarProgress({
+          ...cssTimeBarProgress,
+          backgroundColor: "yellow",
+        });
         setTimeBarColor("yellow");
         setTimeBarIcon(<IoAlertCircle color={"yellow"} size={40} />);
         break;
       case "danger":
+        setCssTimeBarProgress({
+          ...cssTimeBarProgress,
+          backgroundColor: "red",
+        });
         setTimeBarColor("red");
         setTimeBarIcon(<IoCloseCircle color={"red"} size={40} />);
         break;
@@ -81,17 +99,19 @@ const Notification: React.FunctionComponent<Notification> = ({
   };
 
   const timeBarAnimation = () => {
+    console.log("ASDFASDFSADF");
     if (displayTimeBar) {
       let currentTime = timeShown * 1000;
       const fullTime = timeShown * 1000;
-      const timeBarInterval = setInterval(() => {
+      timeBarInterval = setInterval(() => {
         let progress = currentTime / fullTime;
 
         console.log("progress", progress);
         console.log("color", timeBarColor);
+        console.log(cssTimeBarProgress);
         setCssTimeBarProgress({
+          ...cssTimeBarProgress,
           width: `calc(100% * ${progress})`,
-          backgroundColor: `${timeBarColor}`,
         });
         currentTime -= 10;
 
@@ -99,6 +119,7 @@ const Notification: React.FunctionComponent<Notification> = ({
           clearInterval(timeBarInterval);
         }
       }, 10);
+      // setTimeBarInterval(timeBarInterval);
     }
   };
 
@@ -107,7 +128,7 @@ const Notification: React.FunctionComponent<Notification> = ({
       className={`notification ${cssShowClass && "show"}`}
       onClick={() => {
         setCssShowClass(false);
-        // clearInterval(timeBarIn)
+        clearInterval(timeBarInterval);
         setTimeout(() => {
           deleteNotification(id);
         }, 100);
