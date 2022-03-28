@@ -27,8 +27,12 @@
   transform: translateX(-110%);
 }
 
-.notificationContainer[data-position$="-center"] .notification {
-  transform: translateY(-110%);
+.notificationContainer[data-position="top-center"] .notification {
+  transform: translateY(-1000%);
+}
+
+.notificationContainer[data-position="bottom-center"] .notification {
+  transform: translateY(1000%);
 }
 
 .notificationContainer .notification.show {
