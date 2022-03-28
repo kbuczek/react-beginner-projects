@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NotificationContainer from "./NotificationContainer";
+import "./Index.css";
 
 const Index = () => {
   const [newNotification, setNewNotification] = useState({
@@ -52,15 +53,27 @@ const Index = () => {
   };
 
   return (
-    <main>
-      <div style={{ marginTop: "400px" }}>
-        <button onClick={handleClickInfo}>Add info notification</button>
-        <button onClick={handleClickSuccess}>Add success notification</button>
-        <button onClick={handleClickWarning}>Add warning notification</button>
-        <button onClick={handleClickDanger}>Add danger notification</button>
+    <main className="notif-index">
+      <h1>Notifications</h1>
+
+      <div className="notif-index-buttons notif-index-add-buttons">
+        <h4>Add notification:</h4>
+        <button onClick={handleClickInfo} className="notif-index-info">
+          Add info notification
+        </button>
+        <button onClick={handleClickSuccess} className="notif-index-success">
+          Add success notification
+        </button>
+        <button onClick={handleClickWarning} className="notif-index-warning">
+          Add warning notification
+        </button>
+        <button onClick={handleClickDanger} className="notif-index-danger">
+          Add danger notification
+        </button>
       </div>
 
-      <div style={{ marginTop: "50px" }}>
+      <div className="notif-index-buttons notif-index-position-buttons">
+        <h4>Change position:</h4>
         <button onClick={() => setNotifContPosition("top-right")}>
           top right
         </button>

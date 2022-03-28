@@ -43,10 +43,12 @@ const NotificationContainer = ({
     console.log(hiddenNotificationsLength);
     console.log(notificationList.length);
 
-    if (notificationList.length === hiddenNotificationsLength) {
-      console.log("DELETING TABLE");
-      setNotificationList([]);
-      setHiddenNotificationsLength(0);
+    if (notificationList.length && hiddenNotificationsLength) {
+      if (notificationList.length === hiddenNotificationsLength) {
+        console.log("DELETING TABLE");
+        setNotificationList([]);
+        setHiddenNotificationsLength(0);
+      }
     }
   }, [hiddenNotificationsLength]);
 
@@ -70,14 +72,12 @@ const NotificationContainer = ({
   };
 
   const deleteNotification = (id: number) => {
-    // const newNotificationList = notificationList.filter(
-    //   (item) => item.id !== id
-    // );
-    // setNotificationList(newNotificationList);
-    setHiddenNotificationsLength((prev) => prev + 1);
-    console.log("ADDD");
     const index = notificationList.findIndex((x) => x.id === id);
-    notificationList[index].hidden = true;
+    //dont delete if already hidden
+    if (!notificationList[index].hidden) {
+      setHiddenNotificationsLength((prev) => prev + 1);
+      notificationList[index].hidden = true;
+    }
   };
 
   return (
@@ -102,26 +102,6 @@ const NotificationContainer = ({
         }
       )}
     </div>
-    // <>
-    //   {notificationList?.map(
-    //     ({ id, title, message, type, timeShown, displayTimeBar }) => {
-    //       return (
-    //         <div className="notificationContainer" data-position={position}>
-    //           <Notification
-    //             key={id}
-    //             id={id}
-    //             title={title}
-    //             message={message}
-    //             type={type}
-    //             timeShown={timeShown}
-    //             displayTimeBar={displayTimeBar}
-    //             deleteNotification={deleteNotification}
-    //           />
-    //         </div>
-    //       );
-    //     }
-    //   )}
-    // </>
   );
 };
 
