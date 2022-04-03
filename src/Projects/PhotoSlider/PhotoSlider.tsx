@@ -20,7 +20,7 @@ const PhotoSlider = () => {
       <div className="photo-slider-title">
         <h2>Photo Slider</h2>
       </div>
-      <div className="photo-slider-center">
+      <div className="photo-slider-container">
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
           return (
@@ -29,7 +29,7 @@ const PhotoSlider = () => {
               <h4>{name}</h4>
               <p className="photo-slider-img-title">{title}</p>
               <p className="photo-slider-img-text">{quote}</p>
-              <FaQuoteRight className="icon" />
+              <FaQuoteRight className="photo-slider-icon" />
             </article>
           );
         })}

@@ -1,29 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GoMarkGithub } from "react-icons/go";
+import Navbar from "./Navbar2";
 import "./Home.css";
 const Home = () => {
   return (
     <main className="home">
-      <nav className="home-navbar">
-        <Link className="home-nav-btn" to="#">
-          Home
-        </Link>
-        <Link className="home-nav-btn" to="#">
-          About
-        </Link>
-        <Link className="home-nav-btn" to="#">
-          Projects
-        </Link>
-        <Link className="home-nav-btn" to="#">
-          Contact
-        </Link>
-      </nav>
+      <Navbar />
 
       <section className="home-jumbotron">
         <div className="home-jumbotron-text">
           <img src="kbuczek.png" className="home-jumbotron-photo" alt="photo" />
-          <h3>Hi, I'm Krzysztof Buczek :)</h3>
+          <h1>Hi, I'm Krzysztof Buczek</h1>
           <p>
             Web and app developer. <strong>React</strong> and{" "}
             <strong>React Native</strong> are techonolgies that I'm currently
@@ -61,14 +49,14 @@ const Home = () => {
               Chairman Fullstack App
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               className="home-link home-button-red"
               href="https://hardsoft.netlify.app/"
             >
               HARDSoft webpage
             </a>
-          </li>
+          </li> */}
         </ul>
       </section>
 

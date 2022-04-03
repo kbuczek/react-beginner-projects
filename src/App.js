@@ -6,6 +6,8 @@ import PhotoSlider from "./Projects/PhotoSlider/PhotoSlider";
 import Navbar2 from "./Projects/Navbar2/Navbar2";
 import Navbar from "./Projects/Navbar/Navbar";
 import Home from "./Projects/Home/Home";
+import HomeAboutMe from "./Projects/Home/pages/AboutMe";
+import HomeContact from "./Projects/Home/pages/Contact";
 import Error from "./Error";
 import SimpleList from "./Projects/SimpleList/SimpleList";
 import ToursIntro from "./Projects/ToursIntro/ToursIntro";
@@ -36,6 +38,12 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/about-me">
+            <HomeAboutMe />
+          </Route>
+          <Route exact path="/contact">
+            <HomeContact />
           </Route>
           <Route exact path="/type-racer">
             <TypeRacer />
