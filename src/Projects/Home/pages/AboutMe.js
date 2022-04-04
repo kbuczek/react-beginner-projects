@@ -12,31 +12,38 @@ const AboutMe = () => {
         <div className="about-me-underline"></div>
         <article className="about-me-article">
           <div>
-            In 2021 I started learning web development during my final{" "}
-            <strong>Computer Science</strong> year at{" "}
-            <strong>Jagiellonian University</strong> and I it was something I
+            Hi, I'm Krzysztof Buczek. In 2021 I started learning web development
+            during my final <strong>Computer Science</strong> year at{" "}
+            <strong>Jagiellonian University</strong> and it was something I
             really enjoyed doing. I am a creative person who likes to work with
             computer graphics. Before university I've spent a lot of time
-            creating things in Adobe Photoshop and 3D programs. I graduated
-            Computer Science from Jagiellonian University in October 2021 with{" "}
-            <strong>Bachelor of Science</strong> degree. My current life goal is
-            to become the best Web Developer or at least somewhere near the top
-            :) Below are the technologies that I use everyday to create magic:
+            creating things in Adobe Photoshop and 3D programs. Web development
+            combines 2 things I like: programming and computer graphics into one
+            thing. I graduated Computer Science from Jagiellonian University at{" "}
+            <strong>
+              Astronomy, Physics and Applied Computer Science department
+            </strong>{" "}
+            in October 2021 with <strong>Bachelor of Science</strong> degree.
+            Below are the technologies that I have experience in and that I use
+            everyday:
             <ul>
               <li>React</li>
               <li>TypeScript</li>
               <li>JavaScript</li>
               <li>CSS</li>
+              <li>Bootstrap 5</li>
               <li>React Native</li>
+              <li>NodeJS</li>
             </ul>
-            Be sure to check out <Link to="/my-projects">my projects</Link> tab.
-            In my free time I adore cycling with my friends. Apart from that I
+            Be sure to check out <Link to="/my-projects">my projects</Link> tab
+            or <a href="https://github.com/kbuczek">github</a> profile. I
+            possess <strong>Certificate in Advanced English (C1 level)</strong>.
+            In my free time I adore cycling with my friends. Apart from that, I
             am learning After Effects, Blender and Unreal Engine, because I
             think it can elevate my web development capabilites.{" "}
-            <div>
-              I am available for hire. If you are interestd, please{" "}
-              <Link to="/contact">contact me </Link>
-              via email or telephone.
+            <div className="about-me-contact">
+              <span className="about-me-hire">I am available for hire.</span> If
+              you are interested, please <Link to="/contact">contact me</Link>.
             </div>
           </div>
         </article>

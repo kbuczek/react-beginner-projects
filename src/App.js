@@ -8,6 +8,7 @@ import Navbar from "./Projects/Navbar/Navbar";
 import Home from "./Projects/Home/Home";
 import HomeAboutMe from "./Projects/Home/pages/AboutMe";
 import HomeContact from "./Projects/Home/pages/Contact";
+import HomeProjects from "./Projects/Home/pages/Projects";
 import Error from "./Error";
 import SimpleList from "./Projects/SimpleList/SimpleList";
 import ToursIntro from "./Projects/ToursIntro/ToursIntro";
@@ -38,6 +39,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/projects">
+            <HomeProjects />
           </Route>
           <Route exact path="/about-me">
             <HomeAboutMe />

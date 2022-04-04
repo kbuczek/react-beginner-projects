@@ -2,6 +2,10 @@
   margin-top: 100px;
 }
 
+.about-me-container h1 {
+  font-size: 4rem;
+}
+
 .about-me-underline {
   height: 0.25rem;
   width: 8rem;
@@ -23,4 +27,23 @@
   max-width: 800px;
   text-align: justify;
   font-size: 1.2rem;
+}
+
+.about-me-article > div > ul {
+  font-weight: 800;
+  list-style-type: circle;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.about-me-contact {
+  margin-top: 20px;
+}
+
+.about-me-hire {
+  /* padding-right: 100px; */
+  color: green;
+  font-weight: 600;
+  font-size: 1.4rem;
 }

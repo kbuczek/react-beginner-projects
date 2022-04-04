@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GoMarkGithub } from "react-icons/go";
 import Navbar from "./Navbar2";
+import ProjectsArticle from "./pages/ProjectsArticle";
 import "./Home.css";
 const Home = () => {
   const [homeJumbotronCss, setHomeJumbotronCss] = useState();
@@ -35,6 +36,8 @@ const Home = () => {
 
       <section className="home-projects">
         <h2>My projects</h2>
+
+        <ProjectsArticle />
         <ul>
           <li>
             <Link className="home-link home-button-red" to="/type-racer">
@@ -135,6 +138,7 @@ const Home = () => {
       </section>
       <footer className="home-footer">
         {" "}
+        <div style={{ color: "white" }}>Created by Krzysztof Buczek</div>
         <a
           className="home-github"
           href="https://github.com/kbuczek/react-beginner-projects"
