@@ -34,6 +34,15 @@ html {
   margin: 250px 0 250px 0;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transition: transform 3s ease-in-out;
+  transform: translateY(200px);
+  -webkit-transition: opacity 3s; /* Safari */
+}
+
+.home-jumbotron.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home-jumbotron-photo {

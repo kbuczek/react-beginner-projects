@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GoMarkGithub } from "react-icons/go";
 import Navbar from "./Navbar2";
 import "./Home.css";
 const Home = () => {
+  const [homeJumbotronCss, setHomeJumbotronCss] = useState();
+  const [showCss, setShowCss] = useState(false);
+
+  useEffect(() => {
+    // setHomeJumbotronCss({ opacity: 1, transform: "translateY(0)" });
+    setTimeout(() => {
+      setShowCss(true);
+    }, 100);
+  }, []);
+
   return (
     <main className="home">
       <Navbar />
 
-      <section className="home-jumbotron">
-        <div className="home-jumbotron-text">
+      <section className={`home-jumbotron ${showCss && "show"}`}>
+        <div className="home-jumbotron-text" id="test">
           <img src="kbuczek.png" className="home-jumbotron-photo" alt="photo" />
           <h1>Hi, I'm Krzysztof Buczek</h1>
           <p>
