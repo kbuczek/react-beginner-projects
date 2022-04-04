@@ -35,9 +35,8 @@ html {
   display: flex;
   justify-content: center;
   opacity: 0;
-  transition: transform 3s ease-in-out;
-  transform: translateY(200px);
-  -webkit-transition: opacity 3s; /* Safari */
+  transition: all 500ms ease-in-out;
+  transform: translateY(120%);
 }
 
 .home-jumbotron.show {

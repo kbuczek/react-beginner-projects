@@ -21,11 +21,11 @@ const Home = () => {
       <section className={`home-jumbotron ${showCss && "show"}`}>
         <div className="home-jumbotron-text" id="test">
           <img src="kbuczek.png" className="home-jumbotron-photo" alt="photo" />
-          <h1>Hi, I'm Krzysztof Buczek</h1>
+          <h1>Hi, I'm Krzysztof Buczek :)</h1>
           <p>
-            Web and app developer. <strong>React</strong> and{" "}
-            <strong>React Native</strong> are techonolgies that I'm currently
-            trying to master. Read more...{" "}
+            Web developer who specializes in <strong>React</strong> and{" "}
+            <strong>React Native</strong>.{" "}
+            <Link to="/about-me">Read more...</Link>
           </p>
           <a href="https://github.com/kbuczek">
             <GoMarkGithub /> My github profile

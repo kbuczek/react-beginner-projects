@@ -6,13 +6,13 @@ const links = [
   },
   {
     id: 2,
-    url: "/about-me",
-    text: "About Me",
+    url: "/projects",
+    text: "My projects",
   },
   {
     id: 3,
-    url: "/projects",
-    text: "Projects",
+    url: "/about-me",
+    text: "About Me",
   },
   {
     id: 4,

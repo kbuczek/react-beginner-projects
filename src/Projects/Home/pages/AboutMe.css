@@ -1,0 +1,26 @@
+.about-me-container {
+  margin-top: 100px;
+}
+
+.about-me-underline {
+  height: 0.25rem;
+  width: 8rem;
+  background: var(--color-ocean);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-me-article {
+  padding: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.about-me-article > div {
+  max-width: 800px;
+  text-align: justify;
+  font-size: 1.2rem;
+}
