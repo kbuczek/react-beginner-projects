@@ -55,7 +55,7 @@ html {
 
 .home-projects {
   background-color: white;
-  padding: 100px;
+  padding-top: 80px;
 }
 
 .home-container {
@@ -190,7 +190,19 @@ html {
   margin: 5vw 0 5vw 0;
 }
 
+.home-underline {
+  height: 0.2rem;
+  width: 6rem;
+  background: var(--color-ocean);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .home-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: hsl(219, 29%, 14%);
   height: 100px;
 }

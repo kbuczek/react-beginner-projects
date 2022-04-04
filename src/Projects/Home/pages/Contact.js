@@ -1,21 +1,22 @@
 import React from "react";
 import Navbar from "../Navbar2";
 import { Link } from "react-router-dom";
-import "./AboutMe.css";
+import "./Contact.css";
 
-const AboutMe = () => {
+const Contact = () => {
   return (
-    <main className="about-me">
+    <main className="contact">
       <Navbar />
-      <section className="about-me-container">
+      <section className="contact-container">
         <h1>Contact Me</h1>
-        <div className="about-me-underline"></div>
-        <article className="about-me-article">
-          <div>Please feel free to contact me via email or phone. </div>
+        <div className="contact-underline"></div>
+        <article className="contact-article">
+          <div>Please feel free to contact me via this email address: </div>
+          <img src="./images/email.png" className="contact-email" alt="photo" />
         </article>
       </section>
     </main>
   );
 };
 
-export default AboutMe;
+export default Contact;

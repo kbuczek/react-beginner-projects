@@ -36,41 +36,9 @@ const Home = () => {
 
       <section className="home-projects">
         <h2>My projects</h2>
+        <div className="home-underline"></div>
 
         <ProjectsArticle />
-        <ul>
-          <li>
-            <Link className="home-link home-button-red" to="/type-racer">
-              type racer
-            </Link>
-          </li>
-          <li>
-            <Link className="home-link home-button-red" to="/notification">
-              Notifications
-            </Link>
-          </li>
-          <li>
-            <Link className="home-link home-button-red" to="/griddnd">
-              Grid drag and drop + resize
-            </Link>
-          </li>
-          <li>
-            <a
-              className="home-link home-button-red"
-              href="https://github.com/kbuczek/chairman-mobileapp/blob/main/README.md"
-            >
-              Chairman Fullstack App
-            </a>
-          </li>
-          {/* <li>
-            <a
-              className="home-link home-button-red"
-              href="https://hardsoft.netlify.app/"
-            >
-              HARDSoft webpage
-            </a>
-          </li> */}
-        </ul>
       </section>
 
       <section className="home-small-projects">

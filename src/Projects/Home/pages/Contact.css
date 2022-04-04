@@ -1,0 +1,32 @@
+.contact-container {
+  margin-top: 100px;
+}
+
+.contact-container h1 {
+  font-size: 4rem;
+}
+
+.contact-underline {
+  height: 0.25rem;
+  width: 8rem;
+  background: var(--color-ocean);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+
+.contact-article {
+  padding: 100px;
+  margin-bottom: 100px;
+  background: white;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact-email {
+  margin-top: 10px;
+  /* width: 400px; */
+}

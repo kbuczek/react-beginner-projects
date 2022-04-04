@@ -13,7 +13,7 @@ const AboutMe = () => {
         <article className="about-me-article">
           <div>
             Hi, I'm Krzysztof Buczek. In 2021 I started learning web development
-            during my final <strong>Computer Science</strong> year at{" "}
+            during my final <strong>Applied Computer Science</strong> year at{" "}
             <strong>Jagiellonian University</strong> and it was something I
             really enjoyed doing. I am a creative person who likes to work with
             computer graphics. Before university I've spent a lot of time
@@ -21,7 +21,7 @@ const AboutMe = () => {
             combines 2 things I like: programming and computer graphics into one
             thing. I graduated Computer Science from Jagiellonian University at{" "}
             <strong>
-              Astronomy, Physics and Applied Computer Science department
+              Physics, Astronomy and Applied Computer Science department
             </strong>{" "}
             in October 2021 with <strong>Bachelor of Science</strong> degree.
             Below are the technologies that I have experience in and that I use
