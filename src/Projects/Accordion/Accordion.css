@@ -1,11 +1,12 @@
-/* .acc-main {
+.acc-main {
+  /* margin-left: 40vw; */
   display: flex;
-  justify-items: center;
   align-items: center;
+  justify-content: center;
 }
 
 .acc-container {
-  /* width: 90vw; */
+  width: 90vw;
   margin: 4rem;
   background: var(--clr-white);
   border-radius: var(--radius);
@@ -14,25 +15,7 @@
   display: grid;
 }
 
-.singleQuestion {
-  border: 1px solid rgb(206, 206, 206);
-  background-color: rgb(251, 251, 251);
-  border-radius: var(--radius);
-  margin-top: 1rem;
-}
-
-.singleQuestion header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid rgb(219, 219, 219);
-  border-bottom: 2px solid rgb(219, 219, 219);
-  border-radius: var(--radius);
-  background-color: rgb(255, 255, 255);
-  padding: 1rem 2rem 1rem 2rem;
-}
-
 .content {
   padding: 1rem 2rem 1rem 2rem;
   font-size: medium;
-} */
+}

@@ -1,8 +1,7 @@
 import React from "react";
 import data from "./data";
-import SingleQuestion from "./SingleQuestion";
 import Details from "./details/details";
-// import "./Accordion.css";
+import "./Accordion.css";
 
 const Accordion = () => {
   return (
