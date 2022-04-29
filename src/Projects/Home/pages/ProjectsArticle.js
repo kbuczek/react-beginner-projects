@@ -7,11 +7,6 @@ const ProjectsArticle = () => {
     <article className="projects-article">
       <Link to="/type-racer" style={{ textDecoration: "none" }}>
         <div className="projects-article-box">
-          <img
-            src="./images/projects-typeracer.png"
-            className="projects-article-photo"
-            alt="photo"
-          />
           <div className="projects-article-text">
             <h2>Type Racer</h2>
             {/* <div className="projects-article-underline"></div> */}
@@ -24,6 +19,29 @@ const ProjectsArticle = () => {
               <div className="projects-article-text-tech">React</div>
               <div className="projects-article-text-tech">JavaScript</div>
               <div className="projects-article-text-tech">CSS</div>
+            </div>
+          </div>
+          <img
+            src="./images/projects-typeracer.png"
+            className="projects-article-photo"
+            alt="photo"
+          />
+        </div>
+      </Link>
+
+      <Link to="/snake-game" style={{ textDecoration: "none" }}>
+        <div className="projects-article-box">
+          <img
+            src="./images/projects-snakegame.png"
+            className="projects-article-photo"
+            alt="photo"
+          />
+          <div className="projects-article-text">
+            <h2>Snake Game</h2>
+            {/* <div className="projects-article-underline"></div> */}
+            <div>Snake game created in pure JavaScript.</div>
+            <div className="projects-article-text-stack">
+              <div className="projects-article-text-tech">JavaScript</div>
             </div>
           </div>
         </div>

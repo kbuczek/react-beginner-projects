@@ -52,6 +52,13 @@ function App() {
           <Route exact path="/type-racer">
             <TypeRacer />
           </Route>
+          <Route
+            exact
+            path="/snake-game"
+            render={() => {
+              window.location.href = "/SnakeGame/snakegame.html";
+            }}
+          />
           <Route exact path="/griddnd">
             <GridDragAndDrop data={griddndData} />
           </Route>
