@@ -24,7 +24,7 @@ const PhotoSlider = () => {
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
           return (
-            <article key={id}>
+            <article key={id} className="photo-slider-article">
               <img className="photo-slider-img" src={image} alt={name} />
               <h4>{name}</h4>
               <p className="photo-slider-img-title">{title}</p>
