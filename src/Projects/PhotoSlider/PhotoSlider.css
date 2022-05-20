@@ -1,7 +1,3 @@
-/* .photo-slider {
-  width: 95vw;
-} */
-
 .photo-slider-container {
   margin: 0 auto;
   margin-top: 4rem;
@@ -25,6 +21,7 @@
 }
 
 .photo-slider-article {
+  padding: 10px;
   position: absolute;
   top: 0;
   left: 0;

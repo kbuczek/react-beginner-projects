@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 import data from "./data";
 import "./PhotoSlider.css";
@@ -15,6 +15,24 @@ const PhotoSlider = () => {
   const [people, setPeople] = useState<dataType[]>(data);
   const [index, setIndex] = useState(0);
 
+  useEffect(() => {
+    const lastIndex = people.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, people]); //if index changes or if people data changes
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 3000);
+    //we have to use clean up function to clearIntervals after user clicks on next slide
+    return () => clearInterval(slider);
+  }, [index]);
+
   return (
     <section className="photo-slider">
       <div className="photo-slider-title">
@@ -23,8 +41,18 @@ const PhotoSlider = () => {
       <div className="photo-slider-container">
         {people.map((person, personIndex) => {
           const { id, image, name, title, quote } = person;
+          let position = "nextSlide";
+          if (personIndex === index) {
+            position = "activeSlide";
+          }
+          if (
+            personIndex === index - 1 ||
+            (index === 0 && personIndex === people.length - 1)
+          ) {
+            position = "lastSlide";
+          }
           return (
-            <article key={id} className="photo-slider-article">
+            <article key={id} className={`photo-slider-article ${position}`}>
               <img className="photo-slider-img" src={image} alt={name} />
               <h4>{name}</h4>
               <p className="photo-slider-img-title">{title}</p>
@@ -33,10 +61,16 @@ const PhotoSlider = () => {
             </article>
           );
         })}
-        <button className="photo-slider-prev">
+        <button
+          className="photo-slider-prev"
+          onClick={() => setIndex(index - 1)}
+        >
           <FaChevronLeft />
         </button>
-        <button className="photo-slider-next">
+        <button
+          className="photo-slider-next"
+          onClick={() => setIndex(index + 1)}
+        >
           <FaChevronRight />
         </button>
       </div>
