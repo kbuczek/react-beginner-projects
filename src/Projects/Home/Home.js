@@ -55,6 +55,11 @@ const Home = () => {
             </Link>
           </li>
           <li>
+            <Link className="home-link home-button" to="/lorem-ipsum">
+              Lorem Ipsum
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/navbar2">
               Navbar with Dropdown
             </Link>

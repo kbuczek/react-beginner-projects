@@ -20,6 +20,7 @@ import Tabs from "./Projects/Tabs/Index";
 import GridDragAndDrop from "./Projects/GridDragAndDrop";
 import griddndData from "./Projects/GridDragAndDrop/data/segregators.js";
 import Notification from "./Projects/Notification/Index.tsx";
+import LoremIpsum from "./Projects/LoremIpsum/LoremIpsum";
 
 import Link1 from "./Projects/Navbar2/pages/Link1";
 import Link2 from "./Projects/Navbar2/pages/Link2";
@@ -51,6 +52,9 @@ function App() {
           </Route>
           <Route exact path="/type-racer">
             <TypeRacer />
+          </Route>
+          <Route exact path="/lorem-ipsum">
+            <LoremIpsum />
           </Route>
           <Route
             exact
