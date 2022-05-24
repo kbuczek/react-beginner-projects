@@ -4,11 +4,22 @@ import "./LoremIpsum.css";
 
 const LoremIpsum = () => {
   const [count, setCount] = useState<number>(0);
-  const [text, setText] = useState([]);
+  const [text, setText] = useState<string[]>([]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); //unnecessary page refreshes
-    console.log("hello");
+    let amount = count;
+    if (count <= 0) {
+      amount = 1;
+    }
+    if (count > 8) {
+      amount = 8;
+    }
+    setText(data.slice(0, amount)); //slice return a new copy
+    // let number: any = "10";
+    // number = number >> 0;
+    // console.log(number);
+    // console.log(typeof number);
   };
 
   return (
@@ -29,10 +40,9 @@ const LoremIpsum = () => {
       </form>
 
       <article className="lorem-text">
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam,
-          doloremque.
-        </p>
+        {text.map((item, index) => {
+          return <p key={index}>{item}</p>;
+        })}
       </article>
     </section>
   );
