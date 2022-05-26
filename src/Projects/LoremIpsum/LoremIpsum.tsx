@@ -31,7 +31,7 @@ const LoremIpsum = () => {
           type="number"
           name="amount"
           id="amount"
-          value={count}
+          // value={count}
           onChange={(e) => setCount(Number(e.target.value))}
         ></input>
         <button type="submit" className="lorem-btn">
