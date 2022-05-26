@@ -32,6 +32,7 @@ import Dropdown3 from "./Projects/Navbar2/pages/Dropdown3";
 import Dropdown11 from "./Projects/Navbar2/pages/Dropdown11";
 import Dropdown22 from "./Projects/Navbar2/pages/Dropdown22";
 import Dropdown33 from "./Projects/Navbar2/pages/Dropdown33";
+import ColorGenerator from "./Projects/ColorGenerator/ColorGenerator";
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
           </Route>
           <Route exact path="/lorem-ipsum">
             <LoremIpsum />
+          </Route>
+          <Route exact path="/color-generator">
+            <ColorGenerator />
           </Route>
           <Route
             exact

@@ -60,6 +60,11 @@ const Home = () => {
             </Link>
           </li>
           <li>
+            <Link className="home-link home-button" to="/color-generator">
+              Color Generator
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/navbar2">
               Navbar with Dropdown
             </Link>
