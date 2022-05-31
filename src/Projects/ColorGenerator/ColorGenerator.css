@@ -1,0 +1,9 @@
+.clrgen-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clrgen-error {
+  border-color: red;
+}
