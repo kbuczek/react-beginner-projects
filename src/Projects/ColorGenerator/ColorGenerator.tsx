@@ -21,6 +21,7 @@ const ColorGenerator = () => {
       let colors = new Values(color).all(10);
       setList(colors);
       console.log(list);
+      setError(false);
     } catch (error) {
       console.log(error);
       setError(true);
