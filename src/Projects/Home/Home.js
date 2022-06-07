@@ -50,6 +50,11 @@ const Home = () => {
             </Link>
           </li> */}
           <li>
+            <Link className="home-link home-button" to="/grocery-bud">
+              Grocery Bud
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/photo-slider">
               Photo Slider
             </Link>
