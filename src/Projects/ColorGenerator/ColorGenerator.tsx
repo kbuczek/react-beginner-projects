@@ -4,7 +4,7 @@ import "./ColorGenerator.css";
 import SingleColor from "./SingleColor";
 
 const ColorGenerator = () => {
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("#f15025");
   const [error, setError] = useState(false);
   const [list, setList] = useState<
     {
@@ -13,7 +13,7 @@ const ColorGenerator = () => {
       type: string;
       weight: number;
     }[]
-  >([]);
+  >(new Values("#f15025").all(10));
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,7 +37,7 @@ const ColorGenerator = () => {
             type="text"
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            placeholder="#f15025"
+            placeholder="write color in hex"
             className={`${error ? "clrgen-error" : null}`}
           />
           <button className="clrgen-btn">submit</button>
