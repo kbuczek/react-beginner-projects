@@ -1,0 +1,32 @@
+.gBud-section-center {
+  padding: 50px;
+  background-color: aliceblue;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.gBud-section-center h3 {
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.gBud-input {
+  width: 335px;
+}
+
+.gBud-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 10px;
+  margin-top: 5px;
+}
+
+.gBud-list-item:hover {
+  background-color: rgb(183, 230, 250);
+  border-radius: 20px;
+}
+
+.gBud-list-title {
+  margin: 0;
+}
