@@ -1,0 +1,11 @@
+.gBud-alert {
+  border-radius: 10px;
+}
+
+.gBud-alert-success {
+  background-color: rgb(24, 189, 24);
+}
+
+.gBud-alert-danger {
+  background-color: red;
+}

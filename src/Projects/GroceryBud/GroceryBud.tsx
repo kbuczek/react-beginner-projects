@@ -8,7 +8,11 @@ const GroceryBud = () => {
   const [list, setList] = useState<{ id: string; title: string }[]>([]);
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditID] = useState(null);
-  const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
+  const [alert, setAlert] = useState({
+    show: true,
+    msg: "drake",
+    type: "success",
+  });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,7 +31,7 @@ const GroceryBud = () => {
   return (
     <section className="gBud-section-center">
       <form className="gBud-form" onSubmit={handleSubmit}>
-        {alert.show && <Alert />}
+        {alert.show && <Alert {...alert} />}
         <h3>grocery bud</h3>
         <div className="gBud-form-control">
           <input
