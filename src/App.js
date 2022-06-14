@@ -34,7 +34,7 @@ import Dropdown22 from "./Projects/Navbar2/pages/Dropdown22";
 import Dropdown33 from "./Projects/Navbar2/pages/Dropdown33";
 import ColorGenerator from "./Projects/ColorGenerator/ColorGenerator";
 import GroceryBud from "./Projects/GroceryBud/GroceryBud";
-import Sidebar from "./Projects/Sidebar/Sidebar";
+import SidebarAndModal from "./Projects/SidebarAndModal/AppSnM";
 
 function App() {
   return (
@@ -81,8 +81,8 @@ function App() {
           <Route exact path="/grocery-bud">
             <GroceryBud />
           </Route>
-          <Route exact path="/sidebar">
-            <Sidebar />
+          <Route exact path="/sidebar-and-modal">
+            <SidebarAndModal />
           </Route>
           <Route exact path="/photo-slider">
             <PhotoSlider />
