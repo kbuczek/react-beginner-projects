@@ -50,6 +50,11 @@ const Home = () => {
             </Link>
           </li> */}
           <li>
+            <Link className="home-link home-button" to="/sidebar">
+              Sidebar and modal
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/grocery-bud">
               Grocery Bud
             </Link>
