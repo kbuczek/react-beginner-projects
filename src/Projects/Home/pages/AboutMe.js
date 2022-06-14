@@ -42,8 +42,8 @@ const AboutMe = () => {
             am learning After Effects, Blender and Unreal Engine, because I
             think it can elevate my web development capabilites.{" "}
             <div className="about-me-contact">
-              <span className="about-me-hire">I am available for hire.</span> If
-              you are interested, please <Link to="/contact">contact me</Link>.
+              {/* <span className="about-me-hire">I am available for hire.</span> If */}
+              {/* you are interested, please <Link to="/contact">contact me</Link>. */}
             </div>
           </div>
         </article>
