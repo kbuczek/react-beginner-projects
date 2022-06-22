@@ -35,6 +35,7 @@ import Dropdown33 from "./Projects/Navbar2/pages/Dropdown33";
 import ColorGenerator from "./Projects/ColorGenerator/ColorGenerator";
 import GroceryBud from "./Projects/GroceryBud/GroceryBud";
 import SidebarAndModal from "./Projects/SidebarAndModal/AppSnM";
+import Stripe from "./Projects/Stripe/AppStripe";
 
 function App() {
   return (
@@ -80,6 +81,9 @@ function App() {
           </Route>
           <Route exact path="/grocery-bud">
             <GroceryBud />
+          </Route>
+          <Route exact path="/stripe">
+            <Stripe />
           </Route>
           <Route exact path="/sidebar-and-modal">
             <SidebarAndModal />
