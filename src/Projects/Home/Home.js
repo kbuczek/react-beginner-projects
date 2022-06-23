@@ -21,7 +21,7 @@ const Home = () => {
 
       <section className={`home-jumbotron ${showCss && "show"}`}>
         <div className="home-jumbotron-text" id="test">
-          {/* <img src="kbuczek.png" className="home-jumbotron-photo" alt="photo" /> */}
+          <img src="kbuczek.png" className="home-jumbotron-photo" alt="photo" />
           <h1>Hi, I'm Krzysztof Buczek :)</h1>
           <p>
             Web developer who specializes in <strong>React</strong> and{" "}

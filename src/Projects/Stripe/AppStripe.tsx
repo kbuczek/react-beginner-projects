@@ -1,10 +1,16 @@
 import React from "react";
-import Navbar from "./NavbarStripe";
+import NavbarStripe from "./NavbarStripe";
+import HeroStripe from "./HeroStripe";
+import SidebarStripe from "./SidebarStripe";
+import SubmenuStripe from "./SubmenuStripe";
 
 const App = () => {
   return (
     <>
-      <h2>stripe menu</h2>
+      <NavbarStripe />
+      <SidebarStripe />
+      <HeroStripe />
+      <SubmenuStripe />
     </>
   );
 };
