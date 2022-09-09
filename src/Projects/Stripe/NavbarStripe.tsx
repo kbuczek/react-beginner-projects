@@ -7,6 +7,11 @@ import "./NavbarStripe.css";
 const NavbarStripe = () => {
   const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext();
 
+  const displaySubmenu = (e: React.MouseEvent) => {
+    console.log("hello world");
+    openSubmenu();
+  };
+
   return (
     <nav className="navbarStripe">
       <div className="navbarStripe-center">
@@ -23,7 +28,14 @@ const NavbarStripe = () => {
         </div>
         <ul className="navbarStripe-links">
           <li>
-            <button className="navbarStripe-link-btn">products</button>
+            <button
+              className="navbarStripe-link-btn"
+              onMouseOver={(e: React.MouseEvent) => {
+                displaySubmenu(e);
+              }}
+            >
+              products
+            </button>
           </li>
           <li>
             <button className="navbarStripe-link-btn">developers</button>

@@ -1,0 +1,15 @@
+.heroStripe-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroStripe-text {
+  text-align: start;
+}
+
+.heroStripe-text h1 {
+  font-size: 5.5rem;
+  font-weight: 800;
+}

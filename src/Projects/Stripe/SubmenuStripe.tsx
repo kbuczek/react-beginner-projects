@@ -1,7 +1,13 @@
 import React from "react";
+import { useGlobalContext } from "./context";
 
 const SubmenuStripe = () => {
-  return <div>SubmenuStripe</div>;
+  const { isSubmenuOpen } = useGlobalContext();
+  return (
+    <aside className={`submenuStripe ${isSubmenuOpen && "submenuStripe-show"}`}>
+      SubmenuStripe
+    </aside>
+  );
 };
 
 export default SubmenuStripe;

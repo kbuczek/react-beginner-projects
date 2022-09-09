@@ -1,6 +1,7 @@
 import React from "react";
 import phoneImg from "./Images/phone.svg";
 import { useGlobalContext } from "./context";
+import "./HeroStripe.css";
 
 const HeroStripe = () => {
   const { closeSubmenu } = useGlobalContext();
@@ -10,7 +11,7 @@ const HeroStripe = () => {
         <article className="heroStripe-info">
           <h1>Payments infrastucture for the interet</h1>
           <p>
-            Millions of companiesof all sizes-from startups to Fortune 500s -
+            Millions of companies of all sizes-from startups to Fortune 500s -
             use Stripe's osftware and APIs to accept payments, send payouts, and
             manage their businesses online.
           </p>
