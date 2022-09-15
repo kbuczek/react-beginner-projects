@@ -8,7 +8,11 @@ const NavbarStripe = () => {
   const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext();
 
   const displaySubmenu = (e: React.MouseEvent) => {
-    console.log("hello world");
+    //get button content and coordiantes
+    console.log(e.target);
+    const page = (e.target as HTMLElement).textContent;
+    const tempBtn = (e.target as HTMLElement).getBoundingClientRect();
+    // console.log("hello world");
     openSubmenu();
   };
 
