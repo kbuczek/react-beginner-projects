@@ -6,7 +6,12 @@ import "./HeroStripe.css";
 const HeroStripe = () => {
   const { closeSubmenu } = useGlobalContext();
   return (
-    <section className="heroStripe">
+    <section
+      className="heroStripe"
+      onMouseOver={() => {
+        closeSubmenu();
+      }}
+    >
       <div className="heroStripe-center">
         <article className="heroStripe-info">
           <h1>Payments infrastucture for the interet</h1>
