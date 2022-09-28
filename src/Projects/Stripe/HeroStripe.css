@@ -1,8 +1,38 @@
+.heroStripe::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  top: 0;
+  left: 0;
+  background: url(./Images/hero.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.heroStripe {
+  /* position: relative;
+  min-height: 100vh;
+  margin-top: -5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center; */
+}
+
+.heroStripe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* max-width: 1170px; */
+}
+
 .heroStripe-center {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  /* max-width: 1170px; */
 }
 
 .heroStripe-text {
@@ -12,4 +42,65 @@
 .heroStripe-text h1 {
   font-size: 5.5rem;
   font-weight: 800;
+}
+
+@media screen and (min-width: 800px) {
+  .heroStripe::before {
+    background-size: contain;
+    height: 100%;
+  }
+  .heroStripe-center {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .heroStripe-info h1 {
+    font-size: 3rem;
+  }
+  .heroStripe-info p {
+    font-size: 1.25rem;
+  }
+  .heroStripe-images {
+    display: block;
+    justify-self: center;
+  }
+  .phone-img {
+    width: 12rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .heroStripe-center {
+    grid-template-columns: 2fr 1fr;
+    align-items: end;
+    padding-bottom: 12vh;
+  }
+  .heroStripe-info h1 {
+    max-width: 100%;
+    font-size: 5.5rem;
+  }
+  .heroStripe-images {
+    align-self: end;
+  }
+  .phone-img {
+    width: 15rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .heroStripe-center {
+    padding-bottom: 20vh;
+  }
+  .phone-img {
+    width: 17rem;
+  }
+}
+
+.heroStripe-button {
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  border-color: transparent;
+  color: white;
+  background: #222;
+  cursor: pointer;
+  transition: all 0.3s linear;
 }

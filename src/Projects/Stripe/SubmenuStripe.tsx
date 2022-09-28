@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoRadio } from "react-icons/io5";
 import { useGlobalContext } from "./context";
+import "./SubmenuStripe.css";
 
 const SubmenuStripe = () => {
   const {

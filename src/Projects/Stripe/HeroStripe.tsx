@@ -14,13 +14,15 @@ const HeroStripe = () => {
     >
       <div className="heroStripe-center">
         <article className="heroStripe-info">
-          <h1>Payments infrastucture for the interet</h1>
-          <p>
+          <h1 className="heroStripe-text">
+            Payments infrastructure for the internet
+          </h1>
+          <p className="heroStripe-text">
             Millions of companies of all sizes-from startups to Fortune 500s -
-            use Stripe's osftware and APIs to accept payments, send payouts, and
+            use Stripe's software and APIs to accept payments, send payouts, and
             manage their businesses online.
           </p>
-          <button className="heroStripe-btn">Start Now</button>
+          <button className="heroStripe-button">Start Now</button>
         </article>
         <article className="heroStripe-images">
           <img src={phoneImg} className="heroStripe-phone-img" alt="phone" />
