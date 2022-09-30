@@ -4,8 +4,7 @@ import { useGlobalContext } from "./context";
 
 const CartContainer = () => {
   const { cart } = useGlobalContext();
-  console.log(cart);
-  if (cart.length === 0) {
+  if (cart && cart.length === 0) {
     return (
       <section className="cart">
         {/* cart header */}
@@ -24,9 +23,10 @@ const CartContainer = () => {
       </header>
       {/* cart items */}
       <div>
-        {cart.map((item) => {
-          return <CartItem key={item.id} {...item} />;
-        })}
+        {cart &&
+          cart.map((item) => {
+            return <CartItem key={item.id} {...item} />;
+          })}
       </div>
       {/* cart footer */}
       <footer>

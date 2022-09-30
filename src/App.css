@@ -16,7 +16,7 @@
   --clr-black: #222;
   --clr-grey-5: hsl(210, 22%, 49%);
   --clr-grey-6: hsl(210, 10%, 80%);
-  --transition: all 0.3s linear;
+  --transition: all 0.2s ease-in-out;
   --spacing: 0.1rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);

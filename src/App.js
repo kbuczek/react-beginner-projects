@@ -36,7 +36,7 @@ import ColorGenerator from "./Projects/ColorGenerator/ColorGenerator";
 import GroceryBud from "./Projects/GroceryBud/GroceryBud";
 import SidebarAndModal from "./Projects/SidebarAndModal/AppSnM";
 import Stripe from "./Projects/Stripe/AppStripe";
-import Cart from "./Projects/Cart/App";
+import Cart from "./Projects/Cart/";
 
 function App() {
   return (
