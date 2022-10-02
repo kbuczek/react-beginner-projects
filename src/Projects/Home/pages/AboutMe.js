@@ -33,14 +33,14 @@ const AboutMe = () => {
               <li>CSS</li>
               <li>Bootstrap 5</li>
               <li>React Native</li>
-              <li>NodeJS</li>
+              <li>.NET 6</li>
             </ul>
-            Be sure to check out <Link to="/my-projects">my projects</Link> tab
-            or <a href="https://github.com/kbuczek">github</a> profile. I
-            possess <strong>Certificate in Advanced English (C1 level)</strong>.
-            In my free time I adore cycling with my friends. Apart from that, I
-            am learning After Effects, Blender and Unreal Engine, because I
-            think it can elevate my web development capabilites.{" "}
+            Be sure to check out <Link to="/projects">my projects</Link> tab or{" "}
+            <a href="https://github.com/kbuczek">github</a> profile. I possess{" "}
+            <strong>Certificate in Advanced English (C1 level)</strong>. In my
+            free time I adore cycling with my friends. Apart from that, I am
+            learning After Effects, Blender and Unreal Engine, because I think
+            it can elevate my web development capabilites.{" "}
             <div className="about-me-contact">
               {/* <span className="about-me-hire">I am available for hire.</span> If */}
               {/* you are interested, please <Link to="/contact">contact me</Link>. */}

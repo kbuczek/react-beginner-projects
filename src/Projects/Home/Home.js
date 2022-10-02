@@ -42,7 +42,10 @@ const Home = () => {
       </section>
 
       <section className="home-small-projects">
-        <h4>Smaller projects that I've created while learning React</h4>
+        <h4>
+          Smaller projects that I've created while learning React or following
+          React tutorials
+        </h4>
         <ul className="home-container">
           {/* <li>
             <Link className="home-link home-button-red" to="/memory-game">
@@ -50,8 +53,13 @@ const Home = () => {
             </Link>
           </li> */}
           <li>
+            <Link className="home-link home-button" to="/cart">
+              Cart (useContext + useReducer)
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/stripe">
-              Stripe
+              Stripe (useContext)
             </Link>
           </li>
           <li>
