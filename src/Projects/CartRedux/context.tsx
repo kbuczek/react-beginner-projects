@@ -6,9 +6,9 @@ import reducer from "./reducer";
 const url = "https://course-api.com/react-useReducer-cart-project";
 
 interface Cart {
-  id: number;
+  id: string;
   title: string;
-  price: number;
+  price: string;
   img: string;
   amount: number;
 }

@@ -2,9 +2,9 @@ import React from "react";
 import { useGlobalContext } from "./context";
 
 interface CartItem {
-  id: number;
+  id: string;
   title: string;
-  price: number;
+  price: string;
   img: string;
   amount: number;
 }
