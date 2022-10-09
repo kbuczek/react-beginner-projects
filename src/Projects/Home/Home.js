@@ -24,8 +24,8 @@ const Home = () => {
           <img src="kbuczek.png" className="home-jumbotron-photo" alt="photo" />
           <h1>Hi, I'm Krzysztof Buczek :)</h1>
           <p>
-            Web developer who specializes in <strong>React</strong> and{" "}
-            <strong>React Native</strong>.{" "}
+            Fullstack web developer who specializes in <strong>React</strong>,{" "}
+            <strong>.NET</strong> and <strong>React Native</strong>.{" "}
             <Link to="/about-me">Read more...</Link>
           </p>
           <a href="https://github.com/kbuczek">
@@ -52,6 +52,11 @@ const Home = () => {
               MEMORY GAME
             </Link>
           </li> */}
+          <li>
+            <Link className="home-link home-button" to="/cart-redux">
+              Cart (Redux)
+            </Link>
+          </li>
           <li>
             <Link className="home-link home-button" to="/cart">
               Cart (useContext + useReducer)

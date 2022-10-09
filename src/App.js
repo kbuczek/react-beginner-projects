@@ -37,6 +37,7 @@ import GroceryBud from "./Projects/GroceryBud/GroceryBud";
 import SidebarAndModal from "./Projects/SidebarAndModal/AppSnM";
 import Stripe from "./Projects/Stripe/AppStripe";
 import Cart from "./Projects/Cart/";
+import CartRedux from "./Projects/CartRedux/CartRedux";
 
 function App() {
   return (
@@ -82,6 +83,9 @@ function App() {
           </Route>
           <Route exact path="/grocery-bud">
             <GroceryBud />
+          </Route>
+          <Route exact path="/cart-redux">
+            <CartRedux />
           </Route>
           <Route exact path="/cart">
             <Cart />

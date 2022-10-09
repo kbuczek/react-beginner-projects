@@ -20,8 +20,9 @@ interface AppContextInter {
   amount: number;
   clearCart: Function;
   remove: Function;
-  increase: Function;
-  decrease: Function;
+  // increase: Function;
+  // decrease: Function;
+  changeAmount: Function;
 }
 
 const initialState = {
@@ -31,8 +32,9 @@ const initialState = {
   amount: 0,
   clearCart: () => null,
   remove: () => null,
-  increase: () => null,
-  decrease: () => null,
+  // increase: () => null,
+  // decrease: () => null,
+  changeAmount: () => null,
 };
 
 const AppContext = React.createContext<AppContextInter>(initialState);
@@ -51,17 +53,32 @@ const AppProvider: React.FC<{ children?: React.ReactNode }> = ({
     dispatch({ type: "REMOVE", payload: id });
   };
 
-  const increase = (id: number) => {
-    dispatch({ type: "INCREASE", payload: id });
+  // const increase = (id: number) => {
+  //   dispatch({ type: "INCREASE", payload: id });
+  // };
+
+  // const decrease = (id: number) => {
+  //   dispatch({ type: "DECREASE", payload: id });
+  // };
+
+  const fetchData = async () => {
+    dispatch({ type: "LOADING" });
+    const response = await fetch(url);
+    const cart = await response.json();
+    dispatch({ type: "DISPLAY_ITEMS", payload: cart });
   };
 
-  const decrease = (id: number) => {
-    dispatch({ type: "DECREASE", payload: id });
+  const changeAmount = (id: number, type: string) => {
+    dispatch({ type: "CHANGE_AMOUNT", payload: { id, type } });
   };
 
-  // useEffect(() => {
-  //   dispatch({ type: "GET_TOTALS" });
-  // }, [state.cart]);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    dispatch({ type: "GET_TOTAL" });
+  }, [state.cart]);
 
   return (
     <AppContext.Provider
@@ -69,8 +86,9 @@ const AppProvider: React.FC<{ children?: React.ReactNode }> = ({
         ...state,
         clearCart,
         remove,
-        increase,
-        decrease,
+        // increase,
+        // decrease,
+        changeAmount,
       }}
     >
       {children}
