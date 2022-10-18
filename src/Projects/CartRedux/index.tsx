@@ -1,14 +1,18 @@
 import React from "react";
 import "./index.css";
 import App from "./App";
-import { AppProvider } from "./context";
+// import { AppProvider } from "./context";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 const index = () => {
   return (
     <React.StrictMode>
-      <AppProvider>
+      {/* <AppProvider> */}
+      <Provider store={store}>
         <App />
-      </AppProvider>
+      </Provider>
+      {/* </AppProvider> */}
     </React.StrictMode>
   );
 };
