@@ -65,7 +65,7 @@ const Component = () => {
       {/* //because of theme2 being inside useMemo [dark], new 'theme2' object will
       be created ONLY WHEN dark state changes. */}
       <div style={theme2}>{doubleNumber_v2}</div>
-      {/* //this will also be triggered every rerender :(*/}
+      {/* //this will also be triggered every rerender (if any state in component changes) :(*/}
       <div style={theme3}>{doubleNumber_v2}</div>
     </>
   );
