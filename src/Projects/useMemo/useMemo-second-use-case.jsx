@@ -24,6 +24,14 @@ const Component = () => {
     backgroundColor: "black",
     color: "white",
   };
+  
+  //this will calculate object only on mount (best solution?)
+ const theme4 = useMemo(() => {
+    return {
+      backgroundColor: "white",
+      color: "black",
+    };
+  }, []);
 
   //In javaScript objects and arrays are compared by reference, so 'theme2 === theme' will return false, because they reference different objects
   useEffect(() => {
