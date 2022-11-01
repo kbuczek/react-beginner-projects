@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 
 const Component = () => {
   const [number, setNumber] = useState(0);
@@ -21,13 +21,13 @@ const Component = () => {
         onChange={(e) => setNumber(parseInt(e.target.value))}
       />
       <button onClick={() => setDark((prev) => !prev)}>Change theme</button>
-      // 1. When any state in component changes (dark or number), whole
+      {/* // 1. When any state in component changes (dark or number), whole
       component is rerendered - slowFunction is recalulated every time. 2.If we
       only change DARK state, doubleNumber_v1 is still recalculated even though
-      it doesn't use DARK state (it only uses NUMBER state).
+      it doesn't use DARK state (it only uses NUMBER state). */}
       <div style={theme}>{doubleNumber_v1}</div>
-      // slowFunction wrapped in useMemo with [number] dependency is
-      recalculated ONLY when NUMBER state changes
+      {/* // slowFunction wrapped in useMemo with [number] dependency is
+      recalculated ONLY when NUMBER state changes */}
       <div style={theme}>{doubleNumber_v2}</div>
     </>
   );
