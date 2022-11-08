@@ -18,9 +18,8 @@ function App() {
   }
   return (
     <main>
-      Redux Toolkit
-      {/* <Navbar />
-      <CartContainer /> */}
+      <Navbar />
+      {/* <CartContainer /> */}
     </main>
   );
 }
