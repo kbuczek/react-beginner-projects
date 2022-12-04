@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "./context";
 
 // components
-import Navbar from "./NavbarCart";
+import Navbar from "./components/Navbar";
 import CartContainer from "./CartContainer";
 // items
 
