@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./features/cart/cartSlice";
+import modalReducer from "./features/modal/modalSlice";
 
 export const store = configureStore({
   reducer: {
     cart: cartReducer, //we can access it from any useSelector with state.cart
+    modal: modalReducer,
   },
 });
 //name cart is optional, it can be any string

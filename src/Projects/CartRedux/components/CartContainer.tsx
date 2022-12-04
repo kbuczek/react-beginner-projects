@@ -1,7 +1,9 @@
 import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../features/cart/cartSlice";
+// import { clearCart } from "../features/cart/cartSlice"; instead of clearing cart by clicking "clear cart", we are opening modal instead
+import { openModal } from "../features/modal/modalSlice";
 import type { RootState } from "../store";
+import { clearCart } from "../features/cart/cartSlice";
 
 const CartContainer = () => {
   const { cartItems, total, amount } = useSelector(
@@ -39,7 +41,8 @@ const CartContainer = () => {
         <button
           className="cart-btn clear-btn"
           onClick={() => {
-            dispatch(clearCart());
+            // dispatch(clearCart());
+            dispatch(openModal());
           }}
         >
           clear cart

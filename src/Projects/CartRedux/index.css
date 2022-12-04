@@ -183,3 +183,37 @@ hr {
   border-color: transparent;
   border-width: 0.25px;
 }
+
+.cartRedux-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartRedux-modal {
+  background: var(--clr-white);
+  width: 80vw;
+  max-width: 400px;
+  border-radius: var(--radius);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.cartRedux-modal h4 {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+.cartRedux-modal .cartRedux-clear-btn,
+.cartRedux-modal .cartRedux-confirm-btn {
+  margin-top: 1rem;
+}
+.cartRedux-btn-container {
+  display: flex;
+  justify-content: space-around;
+}
