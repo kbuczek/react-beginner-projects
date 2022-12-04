@@ -1,10 +1,6 @@
-import React from "react";
 import { useGlobalContext } from "./context";
-
-// components
-import Navbar from "./NavbarCart";
-import CartContainer from "./CartContainer";
-// items
+import NavbarCart from "./components/NavbarCart";
+import CartContainer from "./components/CartContainer";
 
 function App() {
   const { loading } = useGlobalContext();
@@ -18,7 +14,7 @@ function App() {
   }
   return (
     <main>
-      <Navbar />
+      <NavbarCart />
       <CartContainer />
     </main>
   );

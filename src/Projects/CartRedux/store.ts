@@ -3,7 +3,7 @@ import cartReducer from "./features/cart/cartSlice";
 
 export const store = configureStore({
   reducer: {
-    cart: cartReducer, //we can access it from any useSelector with store.cart
+    cart: cartReducer, //we can access it from any useSelector with state.cart
   },
 });
 //name cart is optional, it can be any string

@@ -1,13 +1,17 @@
-import React from "react";
 import CartItem from "./CartItem";
-import { useGlobalContext } from "./context";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../features/cart/cartSlice";
+import type { RootState } from "../store";
 
 const CartContainer = () => {
-  const { cart, total, clearCart } = useGlobalContext();
-  if (cart && cart.length === 0) {
+  const { cartItems, total, amount } = useSelector(
+    (state: RootState) => state.cart
+  );
+  const dispatch = useDispatch();
+
+  if (amount < 1) {
     return (
       <section className="cart">
-        {/* cart header */}
         <header>
           <h2>your bag</h2>
           <h4 className="empty-cart">is currently empty</h4>
@@ -17,18 +21,14 @@ const CartContainer = () => {
   }
   return (
     <section className="cart">
-      {/* cart header */}
       <header>
-        <h2 className="cart-title">your bag</h2>
+        <h2>your bag</h2>
       </header>
-      {/* cart items */}
       <div>
-        {cart &&
-          cart.map((item) => {
-            return <CartItem key={item.id} {...item} />;
-          })}
+        {cartItems.map((item) => {
+          return <CartItem key={item.id} {...item} />;
+        })}
       </div>
-      {/* cart footer */}
       <footer>
         <hr />
         <div className="cart-total">
@@ -37,9 +37,9 @@ const CartContainer = () => {
           </h4>
         </div>
         <button
-          className="cart-btn cart-clear-btn"
+          className="cart-btn clear-btn"
           onClick={() => {
-            clearCart();
+            dispatch(clearCart());
           }}
         >
           clear cart

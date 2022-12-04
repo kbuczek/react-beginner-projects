@@ -1,25 +1,23 @@
-import React from "react";
-import { useGlobalContext } from "./context";
+import NavbarCart from "./components/NavbarCart";
+import CartContainer from "./components/CartContainer";
 
-// components
-import Navbar from "./components/Navbar";
-import CartContainer from "./CartContainer";
-// items
+import { useSelector, useDispatch } from "react-redux";
+import { calculateTotals } from "./features/cart/cartSlice";
+import type { RootState } from "./store";
+import { useEffect } from "react";
 
 function App() {
-  const { loading } = useGlobalContext();
+  const { cartItems } = useSelector((state: RootState) => state.cart);
+  const dispatch = useDispatch();
 
-  if (loading) {
-    return (
-      <div className="loading">
-        <h1>Loading...</h1>
-      </div>
-    );
-  }
+  useEffect(() => {
+    dispatch(calculateTotals());
+  }, [cartItems]);
+
   return (
     <main>
-      <Navbar />
-      {/* <CartContainer /> */}
+      <NavbarCart />
+      <CartContainer />
     </main>
   );
 }
