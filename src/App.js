@@ -38,6 +38,9 @@ import SidebarAndModal from "./Projects/SidebarAndModal/AppSnM";
 import Stripe from "./Projects/Stripe/AppStripe";
 import Cart from "./Projects/Cart/";
 import CartRedux from "./Projects/CartRedux/";
+import CartReduxAsyncThunk from "./Projects/CartReduxAsyncThunk/";
+
+// links are in Home/Home.js
 
 function App() {
   return (
@@ -83,6 +86,9 @@ function App() {
           </Route>
           <Route exact path="/grocery-bud">
             <GroceryBud />
+          </Route>
+          <Route exact path="/cart-redux-async-thunk">
+            <CartRedux />
           </Route>
           <Route exact path="/cart-redux">
             <CartRedux />

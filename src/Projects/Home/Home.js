@@ -53,6 +53,14 @@ const Home = () => {
             </Link>
           </li> */}
           <li>
+            <Link
+              className="home-link home-button"
+              to="/cart-redux-async-thunk"
+            >
+              Cart (Redux + createAsyncThunk)
+            </Link>
+          </li>
+          <li>
             <Link className="home-link home-button" to="/cart-redux">
               Cart (Redux)
             </Link>
